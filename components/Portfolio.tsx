@@ -1,306 +1,266 @@
 "use client";
-import React, { useState, useRef } from 'react';
-import { ArrowUpRight, X, Code, BookOpen, Library, FileText } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
+import { ArrowLeft, ArrowRight, ArrowRight as ArrowIcon, Server, TrendingUp, Archive, BookOpen, X, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Portfolio() {
-  const [selectedProject, setSelectedProject] = useState<any | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  console.log("Portfolio rendering");
 
-  const handleSelectProject = (item: any) => {
-    setSelectedProject(item);
-    setCurrentPage(1);
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { align: 'start', skipSnaps: false, dragFree: true },
+    [WheelGesturesPlugin()]
+  );
+  
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  
+  // MODAL STATE
+  const [selectedCategory, setSelectedCategory] = useState<any>(null);
 
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-    setCurrentPage(1);
-  };
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const onInit = useCallback((emblaApi: any) => {
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, []);
+
+  const onSelect = useCallback((emblaApi: any) => {
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    onInit(emblaApi);
+    onSelect(emblaApi);
+    emblaApi.on('reInit', onInit);
+    emblaApi.on('reInit', onSelect);
+    emblaApi.on('select', onSelect);
+  }, [emblaApi, onInit, onSelect]);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedCategory) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedCategory]);
 
   const portfolioItems = [
     {
-      Category: "OJS Development",
-      Icon: Code,
-      Title: "Portal Jurnal Universitas Terkemuka",
-      Desc: "Instalasi, kustomisasi tema eksklusif, dan migrasi server Open Journal Systems (OJS) 3.x dengan standar keamanan tinggi.",
-      Image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
+      id: 1,
+      title: "Sistem Jurnal OJS",
+      desc: "Migrasi server dan kustomisasi tema OJS 3.x standar internasional.",
+      Icon: Server,
       projects: [
-        {
-          client: "Universitas Indonesia",
-          title: "Migrasi OJS 3 & Kustomisasi Tema",
-          desc: "Pemindahan database jurnal dari server lama ke sistem cloud baru, upgrade ke OJS versi terbaru, dan desain tema eksklusif yang responsif.",
-          img: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Politeknik Negeri Jakarta",
-          title: "Setup & Optimalisasi Keamanan Jurnal",
-          desc: "Pemasangan SSL, perlindungan firewall, serta konfigurasi backup otomatis untuk melindungi arsip jurnal dari serangan siber.",
-          img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
-        }
+        "Migrasi OJS 2 ke OJS 3 untuk Jurnal Teknologi Universitas Nusantara.",
+        "Setup Dedicated Server untuk 15 Jurnal Internal Politeknik Mandiri.",
+        "Kustomisasi Tema OJS Standar Internasional untuk Jurnal Kedokteran.",
+        "Integrasi sistem DOI otomatis dengan Crossref API."
       ]
     },
     {
-      Category: "Publikasi Ilmiah",
+      id: 2,
+      title: "Indeksasi & Strategi",
+      desc: "Pendampingan submit naskah untuk target SINTA dan Scopus.",
+      Icon: TrendingUp,
+      projects: [
+        "Pendampingan Akreditasi SINTA 4 ke SINTA 2 dalam 1 tahun.",
+        "Review dan Penyesuaian Standar Naskah untuk Indeksasi Scopus Q3.",
+        "Manajemen Alur Editorial Internasional untuk Jurnal Ekonomi Bisnis.",
+        "Strategi Optimalisasi Sitasi dan Google Scholar Profiling."
+      ]
+    },
+    {
+      id: 3,
+      title: "Tata Kelola Berkala",
+      desc: "Digitalisasi arsip jurnal lama untuk institusi akademik.",
+      Icon: Archive,
+      projects: [
+        "Digitalisasi 10.000 halaman arsip jurnal fisik ke format PDF/A.",
+        "Standardisasi Alur Kerja Redaksi dan Penunjukan Dewan Ahli.",
+        "Input Metadata Retrospektif untuk Edisi Publikasi 2010-2020.",
+        "Audit Kepatuhan Publikasi Etik COPE (Committee on Publication Ethics)."
+      ]
+    },
+    {
+      id: 4,
+      title: "Penerbitan Akademik",
+      desc: "Kurasi desain sampul, ISBN, hingga distribusi buku ajar.",
       Icon: BookOpen,
-      Title: "Indeksasi Jurnal Bereputasi",
-      Desc: "Pendampingan submit, penyuntingan naskah, hingga manajemen tata letak untuk target indeksasi SINTA dan jurnal internasional.",
-      Image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800&auto=format&fit=crop",
       projects: [
-        {
-          client: "Universitas Airlangga",
-          title: "Pendampingan Akreditasi SINTA 2",
-          desc: "Audit sistem OJS, perbaikan metadata artikel, layouting sesuai standar DOAJ, dan pendampingan hingga jurnal berhasil terindeks SINTA 2.",
-          img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Institut Teknologi Bandung",
-          title: "Persiapan Indeksasi Scopus",
-          desc: "Penyuntingan bahasa Inggris (proofreading), perbaikan referensi dengan Mendeley, dan pemenuhan standar kriteria internasional.",
-          img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Brawijaya",
-          title: "Setup & Indeksasi DOAJ",
-          desc: "Penyelarasan kebijakan jurnal, open access policy, dan lisensi Creative Commons untuk memenuhi persyaratan ketat DOAJ.",
-          img: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Politeknik Negeri Malang",
-          title: "Manajemen OJS & DOI Crossref",
-          desc: "Aktivasi layanan DOI dari Crossref, perbaikan XML export, dan manajemen terbitan berkala untuk 4 jurnal fakultas.",
-          img: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Padjadjaran",
-          title: "Penyuntingan Naskah Multidisiplin",
-          desc: "Copyediting komprehensif, uji plagiasi Turnitin, dan tata letak PDF standar penerbitan untuk 50+ manuskrip.",
-          img: "https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Gadjah Mada",
-          title: "Pendampingan Re-Akreditasi SINTA 1",
-          desc: "Evaluasi asesor internal, perbaikan sitasi, dan optimalisasi keragaman penulis internasional untuk upgrade SINTA.",
-          img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "UIN Syarif Hidayatullah",
-          title: "Integrasi Garuda & Google Scholar",
-          desc: "Troubleshooting OAI-PMH, memastikan metadata jurnal tersedot sempurna ke portal Garuda dan Google Scholar.",
-          img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Diponegoro",
-          title: "Desain Sampul & Identitas Jurnal",
-          desc: "Pembuatan pedoman gaya selingkung (author guidelines), template artikel MS Word, dan redesain sampul jurnal.",
-          img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Sebelas Maret",
-          title: "Pelatihan Editor Jurnal OJS 3",
-          desc: "Workshop intensif 2 hari untuk para chief editor dan section editor dalam mengelola alur editorial di OJS 3.",
-          img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Politeknik Perkapalan Surabaya",
-          title: "Indeksasi EBSCO & Copernicus",
-          desc: "Pendaftaran dan pemenuhan evaluasi berkala untuk database pengindeks global Index Copernicus International (ICI).",
-          img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Hasanuddin",
-          title: "Standarisasi Peer Review Process",
-          desc: "Implementasi double-blind peer review form, panduan etika publikasi (COPE), dan manajemen reviewer database.",
-          img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Universitas Telkom",
-          title: "Migrasi OJS 2 ke OJS 3",
-          desc: "Pemutakhiran sistem dengan menjaga URL lama tetap aktif (redirect), tidak ada data author dan artikel yang hilang.",
-          img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
-        }
-      ]
-    },
-    {
-      Category: "Manajemen Jurnal",
-      Icon: Library,
-      Title: "Digitalisasi & Tata Kelola Berkala",
-      Desc: "Digitalisasi arsip jurnal lama (back issue) dan manajemen penerbitan berkala untuk institusi akademik di seluruh Indonesia.",
-      Image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop",
-      projects: [
-        {
-          client: "Fakultas Hukum Universitas Airlangga",
-          title: "Digitalisasi Back Issue 2010-2020",
-          desc: "Proses pemindaian dokumen fisik, ekstraksi metadata, pemisahan bab artikel, dan pengunggahan ke repositori OJS.",
-          img: "https://images.unsplash.com/photo-1522881113591-b52f71f4b16a?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Asosiasi Profesi Pendidik",
-          title: "Manajemen Penerbitan Berkala",
-          desc: "Pengelolaan submission penulis, koordinasi dengan reviewer, hingga proses copyediting dan penerbitan nomor berkala tepat waktu.",
-          img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-        }
-      ]
-    },
-    {
-      Category: "Penerbitan Akademik",
-      Icon: FileText,
-      Title: "Penerbitan Buku Ajar & Monograf",
-      Desc: "Kurasi naskah, desain sampul eksklusif, tata letak standar penerbitan, dan pengurusan ISBN untuk luaran penelitian.",
-      Image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop",
-      projects: [
-        {
-          client: "Dr. Budi Santoso, M.Pd.",
-          title: "Buku Ajar Metodologi Riset",
-          desc: "Penyuntingan naskah, pembuatan ilustrasi vektor, permohonan HAKI & ISBN, dan pencetakan 500 eksemplar buku berstandar.",
-          img: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop"
-        },
-        {
-          client: "Kementerian Riset dan Teknologi",
-          title: "Monograf Kajian Energi Terbarukan",
-          desc: "Kolaborasi penerbitan hasil riset unggulan dengan layout yang mematuhi standar monograf DIKTI, didistribusikan secara digital dan cetak.",
-          img: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800&auto=format&fit=crop"
-        }
+        "Penerbitan 50+ Judul Buku Ajar Ber-ISBN di Tahun 2023.",
+        "Publikasi Prosiding Konferensi Internasional Terindeks DOAJ.",
+        "Desain Sampul Premium dan Tata Letak (Layout) Buku Ilmiah.",
+        "Distribusi Digital ke Perpustakaan Nasional dan Jaringan Kampus."
       ]
     }
   ];
 
-  const ITEMS_PER_PAGE = 8;
-  const totalPages = selectedProject ? Math.ceil(selectedProject.projects.length / ITEMS_PER_PAGE) : 0;
-  const currentProjects = selectedProject ? selectedProject.projects.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE) : [];
-
   return (
-    <div className="w-full">
-      {/* SECTION HEADER */}
-      <div className="max-w-3xl mx-auto text-center px-4 mb-16">
-        <h3 className="text-[#FAB958] font-bold tracking-wider uppercase text-sm mb-3">KARYA KAMI</h3>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1A3263] leading-tight mb-6">Bukti Nyata. Dampak Nyata.</h2>
-        <p className="text-slate-500 text-lg">
-          Lihat bagaimana kami membantu institusi akademik dan peneliti bertransformasi melalui ekosistem publikasi digital yang dirancang dengan presisi.
+    <section className="w-full relative overflow-hidden flex flex-col" id="portofolio">
+      {/* HEADER SECTION */}
+      <div className="max-w-3xl mx-auto text-center px-4 mb-16 relative z-10">
+        <h5 className="text-[#FAB958] font-bold text-xs tracking-widest uppercase mb-4">Portofolio</h5>
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1A3263] tracking-tight mb-6">
+          Rekam Jejak Kolaborasi.
+        </h2>
+        <p className="text-slate-500 text-lg leading-relaxed">
+          Kami mendampingi universitas dan lembaga riset menuntaskan tantangan manajemen jurnal, migrasi sistem, hingga percepatan indeksasi dengan strategi yang terukur.
         </p>
       </div>
 
-      {/* PORTFOLIO CAROUSEL */}
-      <div ref={carouselRef} className="max-w-7xl mx-auto px-4 overflow-hidden pb-12 cursor-grab active:cursor-grabbing">
-        <motion.div 
-          className="flex gap-6 w-max"
-          drag="x"
-          dragConstraints={carouselRef}
-          whileTap={{ cursor: "grabbing" }}
-        >
-          {portfolioItems.map((item, index) => {
+      {/* EMBLA CAROUSEL */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full overflow-hidden cursor-grab active:cursor-grabbing pb-4 relative z-10" ref={emblaRef}>
+        <div className="flex gap-6 md:gap-8">
+          {portfolioItems.map((item) => {
             const IconComponent = item.Icon;
             return (
-              <motion.div 
-                key={index} 
-                onClick={() => handleSelectProject(item)} 
-                className="group bg-white border border-slate-100 rounded-3xl p-8 hover:border-[#FAB958]/30 transition-all duration-300 flex flex-col items-center text-center cursor-pointer min-w-[280px] w-[280px] md:min-w-[320px] md:w-[320px] shrink-0 hover:shadow-xl"
+              <div 
+                key={item.id} 
+                className="w-[300px] md:w-[400px] flex-shrink-0 bg-white border border-slate-100 rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col"
               >
-                <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#FAB958]/10 transition-transform duration-300">
-                  <IconComponent className="text-[#1A3263] group-hover:text-[#FAB958] w-8 h-8 transition-colors duration-300" />
+                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-[#1A3263] mb-8 group-hover:bg-[#FAB958] group-hover:text-white transition-colors duration-300">
+                  <IconComponent className="w-6 h-6" />
                 </div>
-                <span className="inline-block px-4 py-1.5 bg-[#E8E2DB]/60 text-[#1A3263] text-xs font-bold rounded-full mb-4">
-                  {item.Category}
-                </span>
-                <h3 className="text-xl font-extrabold text-[#1A3263] mb-2 leading-tight">
-                  {item.Title}
+                
+                <h3 className="text-xl font-bold text-[#1A3263] mb-3">
+                  {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm line-clamp-3">
-                  {item.Desc}
+                
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-1">
+                  {item.desc}
                 </p>
-              </motion.div>
-            )
+                
+                <button 
+                  onClick={() => setSelectedCategory(item)}
+                  className="flex items-center gap-2 text-sm font-bold text-[#FAB958] hover:text-[#1A3263] transition-colors w-fit cursor-pointer"
+                >
+                  Lihat Detail <ArrowIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </button>
+              </div>
+            );
           })}
-        </motion.div>
+        </div>
       </div>
 
-      {/* CATEGORY FOLDER MODAL */}
+      {/* NAVIGATION CONTROLS */}
+      <div className="flex items-center justify-center gap-6 mt-12 mb-8 relative z-10">
+        <button 
+          onClick={scrollPrev} 
+          disabled={prevBtnDisabled} 
+          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+          aria-label="Previous slide"
+        >
+          <ArrowLeft className="w-5 h-5"/>
+        </button>
+        
+        <div className="flex items-center gap-2">
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`${index === selectedIndex ? 'w-8 h-2 bg-[#FAB958]' : 'w-2 h-2 bg-slate-200 hover:bg-slate-300'} rounded-full transition-all duration-300 cursor-pointer`}
+              aria-label={`Scroll to snap ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        <button 
+          onClick={scrollNext} 
+          disabled={nextBtnDisabled} 
+          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+          aria-label="Next slide"
+        >
+          <ArrowRight className="w-5 h-5"/>
+        </button>
+      </div>
+
+      {/* THE MODAL (Framer Motion) */}
       <AnimatePresence>
-        {selectedProject && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-[#1A3263]/80 backdrop-blur-sm"
-            onClick={handleCloseModal}
-          >
-            <motion.div 
+        {selectedCategory && (
+          <>
+            {/* BACKDROP */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedCategory(null)}
+              className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] cursor-pointer"
+            />
+            
+            {/* MODAL CARD */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-5xl max-h-[85vh] flex flex-col bg-slate-50 overflow-hidden rounded-[2.5rem] shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-white rounded-[2.5rem] shadow-2xl z-[101] overflow-hidden flex flex-col"
             >
-              {/* Modal Header (Sticky) */}
-              <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-xl border-b border-slate-200/60 shadow-sm p-6 md:p-8 flex items-start justify-between shrink-0">
-                <div>
-                  <span className="inline-block px-3 py-1 bg-[#FAB958]/20 text-[#FAB958] text-sm font-bold uppercase tracking-wider rounded-md mb-2">
-                    {selectedProject.Category}
-                  </span>
-                  <h3 className="text-3xl font-extrabold text-[#1A3263] leading-tight">
-                    Daftar Proyek Selesai
-                  </h3>
+              {/* MODAL HEADER */}
+              <div className="bg-[#F4F7F9] px-8 py-8 flex justify-between items-start">
+                <div className="flex gap-4 items-center">
+                  <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-[#FAB958]">
+                    <selectedCategory.Icon className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h4 className="text-[#FAB958] font-bold text-xs tracking-widest uppercase mb-1">Portofolio Kategori</h4>
+                    <h3 className="text-2xl font-extrabold text-[#1A3263]">{selectedCategory.title}</h3>
+                  </div>
                 </div>
                 <button 
-                  className="p-2 bg-slate-50 hover:bg-slate-100 rounded-full text-slate-500 hover:text-slate-800 transition-colors shrink-0 ml-4"
-                  onClick={handleCloseModal}
+                  onClick={() => setSelectedCategory(null)}
+                  className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-400 hover:text-[#1A3263] hover:bg-slate-100 transition-colors shadow-sm cursor-pointer"
                 >
-                  <X className="w-6 h-6"/>
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
-              {/* Modal Body (Scrollable) */}
-              <div className="overflow-y-auto p-6 md:p-8 flex-grow [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full scrollbar-thin scrollbar-thumb-slate-300">
-                <div className="min-h-[50vh] flex flex-col justify-between">
-                  {/* Inner Projects Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {currentProjects.map((proj: any, idx: number) => (
-                      <div key={idx} className="group bg-white rounded-3xl p-4 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 w-full max-w-[280px] flex flex-col">
-                        <div className="w-full aspect-square rounded-2xl overflow-hidden relative">
-                          <img src={proj.img} alt={proj.title} className="group-hover:scale-105 transition-transform duration-700 object-cover w-full h-full" />
-                        </div>
-                        <div className="pt-4 pb-2 px-1 flex flex-col flex-grow">
-                          <span className="inline-block px-2 py-1 bg-[#FAB958]/10 text-[#FAB958] text-[10px] font-bold uppercase tracking-wider rounded-md mb-2 break-words leading-tight">
-                            {proj.client}
-                          </span>
-                          <h4 className="text-base font-bold text-[#1A3263] mt-2 mb-1 leading-tight">{proj.title}</h4>
-                          <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">{proj.desc}</p>
-                        </div>
+              {/* MODAL BODY (Scrollable List) */}
+              <div className="p-8 max-h-[60vh] overflow-y-auto">
+                <p className="text-slate-500 mb-8 leading-relaxed">
+                  {selectedCategory.desc} Berikut adalah daftar proyek unggulan yang telah kami selesaikan dalam kategori ini:
+                </p>
+                <div className="flex flex-col gap-4">
+                  {selectedCategory.projects.map((project: string, idx: number) => (
+                    <div 
+                      key={idx} 
+                      className="group flex gap-4 p-4 rounded-2xl border border-slate-100 bg-white hover:bg-[#F4F7F9] hover:border-[#F4F7F9] transition-all duration-300"
+                    >
+                      <div className="mt-1 flex-shrink-0 text-[#FAB958] group-hover:scale-110 transition-transform">
+                        <CheckCircle2 className="w-6 h-6" />
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Pagination Controls */}
-                  {totalPages > 1 && (
-                    <div className="flex justify-center items-center gap-4 mt-10 pt-6 border-t border-slate-200/60 shrink-0">
-                      <button 
-                        disabled={currentPage === 1}
-                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                        className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${currentPage === 1 ? 'bg-slate-100 text-slate-400 opacity-50 cursor-not-allowed' : 'bg-[#1A3263] hover:bg-[#1A3263]/90 text-white'}`}
-                      >
-                        Sebelumnya
-                      </button>
-                      <span className="text-sm font-bold text-slate-600">
-                        Halaman {currentPage} dari {totalPages}
-                      </span>
-                      <button 
-                        disabled={currentPage === totalPages}
-                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-                        className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${currentPage === totalPages ? 'bg-slate-100 text-slate-400 opacity-50 cursor-not-allowed' : 'bg-[#1A3263] hover:bg-[#1A3263]/90 text-white'}`}
-                      >
-                        Selanjutnya
-                      </button>
+                      <p className="text-slate-600 font-medium leading-relaxed group-hover:text-[#1A3263] transition-colors">
+                        {project}
+                      </p>
                     </div>
-                  )}
+                  ))}
                 </div>
               </div>
 
+              {/* MODAL FOOTER */}
+              <div className="bg-slate-50 px-8 py-6 border-t border-slate-100 flex justify-end">
+                <button 
+                  onClick={() => setSelectedCategory(null)}
+                  className="px-6 py-2.5 rounded-full bg-[#1A3263] text-white font-bold text-sm hover:bg-[#FAB958] transition-colors cursor-pointer"
+                >
+                  Tutup
+                </button>
+              </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
-    </div>
+
+    </section>
   );
 }

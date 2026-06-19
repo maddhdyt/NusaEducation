@@ -46,10 +46,10 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full" id="keunggulan">
       {/* SECTION HEADER */}
       <div className="max-w-3xl mx-auto text-center px-4 mb-16">
-        <h3 className="text-[#FAB958] font-bold tracking-wider uppercase text-sm mb-3">MENGAPA NUSA AGENCY?</h3>
+        <h3 className="text-[#FAB958] font-bold tracking-wider uppercase text-sm mb-3">KEUNGGULAN KAMI</h3>
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#1A3263] leading-tight mb-6">Pendekatan Kami Berbeda.</h2>
         <p className="text-slate-500 text-lg">
           Kami tidak sekadar mengeksekusi proyek. Kami merancang ekosistem digital yang berorientasi pada hasil dan pertumbuhan jangka panjang.
@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
       </div>
 
       {/* BENTO GRID ARCHITECTURE (Asymmetric) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 md:grid-cols-3 gap-6">
         {reasons.map((item, index) => {
           const IconComponent = item.Icon;
           return (

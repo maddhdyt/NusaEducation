@@ -4,6 +4,10 @@ import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import CallToAction from "@/components/CallToAction";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -23,7 +27,11 @@ export default function Home() {
         <section className="py-24 bg-slate-50">
           <Testimonials />
         </section>
+        <CallToAction />
+        <Contact />
+        <FAQ />
       </main>
+      <Footer />
     </div>
   );
 }

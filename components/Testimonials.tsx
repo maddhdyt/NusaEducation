@@ -38,6 +38,28 @@ export default function Testimonials() {
     emblaApi.on('select', onSelect);
   }, [emblaApi, onInit, onSelect]);
 
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    const viewportNode = emblaApi.rootNode();
+    const onWheel = (e: WheelEvent) => {
+      // If user is scrolling horizontally (trackpad) or using Shift+Scroll
+      const isHorizontalScroll = Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey;
+      
+      if (isHorizontalScroll) {
+        e.preventDefault(); // Prevent page from jumping/scrolling
+        if (e.deltaX > 0 || (e.shiftKey && e.deltaY > 0)) {
+          emblaApi.scrollNext();
+        } else {
+          emblaApi.scrollPrev();
+        }
+      }
+    };
+
+    viewportNode.addEventListener('wheel', onWheel, { passive: false });
+    return () => viewportNode.removeEventListener('wheel', onWheel);
+  }, [emblaApi]);
+
   const testimonials = [
     {
       Client: "Dr. Aisyah, Dekan Universitas X",
@@ -72,7 +94,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full" id="testimoni">
       {/* SECTION HEADER */}
       <div className="max-w-3xl mx-auto text-center px-4 mb-16">
         <h3 className="text-[#FAB958] font-bold tracking-wider uppercase text-sm mb-3">TESTIMONIAL</h3>
@@ -83,7 +105,7 @@ export default function Testimonials() {
       </div>
 
       {/* EDITORIAL CAROUSEL */}
-      <div className="max-w-7xl mx-auto pl-4 md:px-4 overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
         <div className="flex gap-6 md:gap-8 pr-4 md:pr-0">
           {testimonials.map((item, index) => (
             <div key={index} className="relative group overflow-hidden rounded-[2.5rem] w-[300px] h-[540px] flex-shrink-0 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
@@ -115,7 +137,7 @@ export default function Testimonials() {
         <button 
           onClick={scrollPrev} 
           disabled={prevBtnDisabled} 
-          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ArrowLeft className="w-5 h-5"/>
         </button>
@@ -134,7 +156,7 @@ export default function Testimonials() {
         <button 
           onClick={scrollNext} 
           disabled={nextBtnDisabled} 
-          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+          className="p-3 rounded-full border border-slate-200 text-[#1A3263] hover:bg-[#FAB958] hover:text-white hover:border-[#FAB958] transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ArrowRight className="w-5 h-5"/>
         </button>

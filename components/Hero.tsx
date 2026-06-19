@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#547792] rounded-full mix-blend-multiply filter blur-[120px] opacity-50 z-0 pointer-events-none"></div>
 
       {/* Top: Centered Stack */}
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-4 pt-20 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl px-6 md:px-8 flex-col items-center pt-20 text-center">
         <h1 className="animate-fade-in-up max-w-4xl text-5xl font-extrabold tracking-tight text-[#1A3263] md:text-7xl">
           Digitalisasi Bisnis Anda <br className="hidden md:block" />
           <span className="relative inline-block px-4 py-1 mt-2 bg-gradient-to-r from-[#FAB958] to-[#FAB958]/40 text-[#1A3263] rounded-lg rotate-[-1deg]">Bersama Kami!</span>
@@ -28,7 +28,7 @@ export default function Hero() {
       </div>
 
       {/* The Overlapping Stats Container */}
-      <div className="animate-fade-in-up delay-400 relative z-20 mx-auto -mt-32 w-full max-w-6xl rounded-[2.5rem] bg-[#1A3263] p-4 shadow-2xl md:-mt-48 md:p-5">
+      <div className="animate-fade-in-up delay-400 relative z-20 mx-auto -mt-32 w-full max-w-7xl px-6 md:px-8 rounded-[2.5rem] bg-[#1A3263] p-4 shadow-2xl md:-mt-48 md:p-5">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
           {/* Card 1 */}
           <div className="group relative flex min-h-[160px] cursor-pointer flex-col justify-end overflow-hidden rounded-3xl bg-[#547792] p-6 text-white lg:col-span-2">
@@ -60,6 +60,54 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* CLIENT LOGO MARQUEE */}
+      <div className="mt-20 md:mt-24 w-full flex flex-col items-center">
+        <h3 className="text-center text-slate-500 font-medium text-sm md:text-base tracking-wide mb-8">
+          Dipercaya oleh lebih dari 540+ Institusi Akademik & Pengelola Jurnal Nasional
+        </h3>
+        
+        <div className="relative w-full overflow-hidden flex items-center py-4 max-w-7xl mx-auto px-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          
+          {/* ANIMATED TRACK */}
+          <style>{`
+            @keyframes infinite-scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
+          <div className="flex w-fit animate-[infinite-scroll_40s_linear_infinite] hover:[animation-play-state:paused]">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex shrink-0 items-center justify-around">
+                {[
+                  "https://ik.imagekit.io/yqhp1cmbp/image782.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/group1308.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image403.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image399.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image778.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/whatsapp_image_2024-06-16_at_1.37.38_pm-removebg-preview(1)1.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/3(1)1.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image404.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image407.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image780.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image425.webp",
+                  "https://ik.imagekit.io/yqhp1cmbp/image781.webp"
+                ].map((logo, idx) => (
+                  <div key={idx} className="relative group flex items-center justify-center">
+                    {/* The Logo */}
+                    <img 
+                      src={logo} 
+                      alt="Client Logo" 
+                      className="h-10 md:h-12 w-auto object-contain mx-8 md:mx-12 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 ease-out cursor-pointer drop-shadow-[0_0_0px_rgba(250,185,88,0)] group-hover:drop-shadow-[0_0_10px_rgba(250,185,88,0.8)]" 
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { BookOpen, Globe, Megaphone, Newspaper, BookMarked, GraduationCap, Briefcase, Building2, Scale } from 'lucide-react';
+import Link from 'next/link';
+import { BookOpen, Globe, Megaphone, Newspaper, BookMarked, GraduationCap, Briefcase, Building2, Scale, ArrowUpRight } from 'lucide-react';
 
 export default function Services() {
   const servicesList = [
@@ -62,19 +63,27 @@ export default function Services() {
       </div>
 
       {/* MAIN GRID (Full Width, 3 Columns) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {servicesList.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div key={index} className="group bg-white border border-slate-100/80 rounded-3xl p-6 hover:shadow-2xl hover:shadow-[#1A3263]/5 hover:-translate-y-1 transition-all duration-300 cursor-pointer flex gap-4 items-start">
-              <div className="shrink-0 w-14 h-14 rounded-2xl bg-slate-50 text-[#1A3263] flex items-center justify-center group-hover:bg-[#FAB958] group-hover:text-white transition-colors duration-300 shadow-sm">
-                <Icon size={24} />
+            <Link key={index} href="/layanan/indeksasi" className="group cursor-pointer bg-white border border-slate-100/80 rounded-3xl p-6 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(26,50,99,0.08)] transition-all duration-500 flex flex-col h-full">
+              <div className="flex gap-4 items-start mb-6">
+                <div className="shrink-0 w-14 h-14 rounded-2xl bg-slate-50 text-[#1A3263] flex items-center justify-center group-hover:bg-[#FAB958] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <Icon size={24} />
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-bold text-[#1A3263] mb-2">{service.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{service.desc}</p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <h3 className="text-lg font-bold text-[#1A3263] mb-2">{service.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{service.desc}</p>
+              <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-sm font-bold text-[#1A3263] group-hover:text-[#FAB958] transition-colors">Lihat Detail</span>
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#FAB958] group-hover:text-white text-[#1A3263] transition-all duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="w-4 h-4" />
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
