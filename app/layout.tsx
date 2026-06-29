@@ -1,10 +1,28 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
+import localFont from "next/font/local";
+import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
+});
+
+const featureFont = localFont({
+  src: [
+    {
+      path: "./fonts/FeatureDisplay-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/FeatureDisplay-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-feature",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
+      <body suppressHydrationWarning className={`${geist.variable} ${featureFont.variable} font-sans antialiased`}>
+        <CustomCursor />
         {children}
       </body>
     </html>

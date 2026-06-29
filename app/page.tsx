@@ -1,34 +1,24 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Portfolio from "@/components/Portfolio";
-import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
-import CallToAction from "@/components/CallToAction";
-import Contact from "@/components/Contact";
+import Hero from "@/components/home/Hero";
+import Services from "@/components/home/Services";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import Portfolio from "@/components/home/Portfolio";
+import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-first/20 selection:text-first">
+    <div className="min-h-screen bg-[#F8F9FA] font-sans selection:bg-[#1A3263]/20 selection:text-[#1A3263]">
       <Navbar />
       <main>
         <Hero />
-        <section className="pt-24 pb-32">
-          <Services />
-        </section>
-        <section className="py-24 bg-slate-50/50">
-          <WhyChooseUs />
-        </section>
-        <section className="py-24 bg-white">
-          <Portfolio />
-        </section>
-        <section className="py-24 bg-slate-50">
-          <Testimonials />
-        </section>
-        <CallToAction />
-        <Contact />
+        <Services />
+        <WhyChooseUs />
+        <Portfolio />
+        <Testimonials />
+        <CTA />
         <FAQ />
       </main>
       <Footer />

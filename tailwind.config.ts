@@ -14,7 +14,8 @@ export default {
         fourth: "#E8E2DB",
       },
       fontFamily: {
-        sans: ["var(--font-plus-jakarta-sans)"],
+        sans: ["var(--font-geist)", "sans-serif"],
+        serif: ["var(--font-feature)", "Feature", "Georgia", "serif"],
       },
     },
   },
