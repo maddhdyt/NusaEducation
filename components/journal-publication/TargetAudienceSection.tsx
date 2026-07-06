@@ -51,7 +51,8 @@ export default function TargetAudienceSection() {
 
   return (
     <section
-      className="relative w-full bg-white font-sans pb-20"
+      id="target"
+      className="relative w-full bg-white font-sans pb-20 scroll-mt-20"
       style={{ overflowX: 'clip' }}
     >
       {/* 
@@ -59,17 +60,18 @@ export default function TargetAudienceSection() {
         A standard flex-row layout inside the 1380px container.
         No absolute text boxes. No full-width hacks.
       */}
-      <div className="max-w-[1380px] mx-auto px-6 md:px-10 relative flex flex-col lg:flex-row items-start">
+      <div className="max-w-[1380px] mx-auto px-0 md:px-10 relative flex flex-col-reverse lg:flex-row items-start">
 
         {/* 1. LEFT COLUMN: Blue Blob Anchor */}
         {/* This column serves as the mathematical anchor for the absolute blue blob */}
-        <div className="w-full lg:w-[50%] relative min-h-[400px] lg:h-auto pointer-events-none">
+        <div className="w-full lg:w-[50%] relative min-h-[400px] lg:h-auto pointer-events-none mt-20 lg:mt-0">
 
           {/* 
                 Blue Blob Wrapper
-                Anchored EXACTLY at top: 0 and right: -2px of the left column.
+                Anchored EXACTLY at top: 0 and right: -2px of the left column on desktop.
+                On mobile, centered and scaled to 100% of screen width.
               */}
-          <div className="absolute top-0 right-0 lg:right-[-2px] w-[96vw] lg:w-[900px] lg:max-w-[55vw] z-20">
+          <div className="absolute top-0 left-0 lg:left-auto lg:right-[-2px] w-full lg:w-[900px] lg:max-w-[55vw] z-20">
 
             {/* 
                     THE MATHEMATICAL SHIFT:
@@ -109,72 +111,70 @@ export default function TargetAudienceSection() {
                 <div className="absolute bg-[#0052FF]" style={{ left: 'calc(3 * 100% / 12)', top: 'calc(10 * 100% / 11)', width: 'calc(4 * 100% / 12)', height: 'calc(100% / 11)' }}></div>
               </div>
 
-              {/* --- FLOATING PERSONAS (Outside ClipPath so they can bleed out) --- */}
-              
-              {/* 1. Dosen / Peneliti (RED) */}
-              <div className="absolute top-[20%] lg:top-[20%] left-[15%] lg:left-[25%] z-30 pointer-events-auto group">
-                <div className="w-[130px] lg:w-[170px] h-[160px] lg:h-[210px] bg-[#FF5A43] relative transition-transform group-hover:-translate-y-1">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Dosen" className="w-full h-full object-cover object-top" />
-                  <div className="absolute -bottom-2 -left-2 bg-[#FFC4BA] text-[#000000] text-[9px] lg:text-[11px] font-medium px-1.5 py-0.5 whitespace-nowrap">
+              {/* 1. Dosen / Peneliti (RED/ORANGE) */}
+              <div className="absolute top-[25%] md:top-[35%] left-[18%] md:left-[25%] z-30 pointer-events-auto">
+                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF4D2D] relative shadow-lg">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Dosen" className="w-full h-full object-cover object-bottom" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-orange-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-orange-200">
                     Dosen Akademik
                   </div>
                 </div>
-                {/* Tooltip (Top-Left) */}
-                <div className="absolute bottom-[80%] right-[85%] mb-4 bg-white rounded-sm shadow-2xl p-2 lg:p-3 w-[160px] lg:w-[200px] flex items-start gap-2 z-40">
-                  <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-[#FF5A43] shrink-0 text-white flex items-center justify-center text-[10px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[13px] lg:text-[16px] font-serif tracking-tight leading-[1.1] text-[#0A192F]">Perlu pendampingan revisi agar tembus LoA SINTA 2.</p>
+                {/* Tooltip (Above on mobile to avoid covering Guru, Top-Left on desktop) */}
+                <div className="absolute bottom-[105%] md:bottom-[75%] left-[-15px] md:left-auto md:right-[60%] mb-2 md:mb-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[150px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[10px] md:text-[12px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Perlu pendampingan<br></br> revisi agar tembus<br></br>LoA SINTA 2.</p>
                 </div>
               </div>
 
               {/* 2. Mahasiswa Pascasarjana (GREEN) */}
-              <div className="absolute top-[8%] lg:top-[10%] left-[45%] lg:left-[48%] z-30 pointer-events-auto group">
-                <div className="w-[120px] lg:w-[160px] h-[150px] lg:h-[200px] bg-[#66FF33] relative transition-transform group-hover:-translate-y-1">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Mahasiswa" className="w-full h-full object-cover object-top" />
-                  <div className="absolute -bottom-2 -left-2 bg-[#E0FFCC] text-[#000000] text-[9px] lg:text-[11px] font-medium px-1.5 py-0.5 whitespace-nowrap">
+              <div className="absolute top-[15%] md:top-[15%] left-[58%] md:left-[50%] z-30 pointer-events-auto">
+                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Mahasiswa" className="w-full h-full object-cover object-bottom" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-lime-200">
                     Mahasiswa S2/S3
                   </div>
                 </div>
-                {/* Tooltip (Right) */}
-                <div className="absolute top-[20%] left-[90%] ml-4 bg-white rounded-sm shadow-2xl p-2 lg:p-3 w-[160px] lg:w-[200px] flex items-start gap-2 z-40">
-                  <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-[#FF5A43] shrink-0 text-white flex items-center justify-center text-[10px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[13px] lg:text-[16px] font-serif tracking-tight leading-[1.1] text-[#0A192F]">Bantu submit jurnal internasional untuk syarat sidang.</p>
+                {/* Tooltip (Above on mobile, Right on desktop) */}
+                <div className="absolute bottom-[105%] md:bottom-auto top-auto md:top-[20%] right-[-15px] md:right-auto md:left-[75%] mb-2 md:mb-0 md:ml-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[150px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[10px] md:text-[12px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Bantu submit jurnal<br></br> internasional untuk<br></br> syarat sidang.</p>
                 </div>
               </div>
 
               {/* 3. Guru & ASN (PINK) */}
-              <div className="absolute top-[50%] lg:top-[50%] left-[25%] lg:left-[35%] z-30 pointer-events-auto group hidden md:block">
-                <div className="w-[140px] lg:w-[180px] h-[170px] lg:h-[220px] bg-[#FF85D4] relative transition-transform group-hover:-translate-y-1">
-                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Guru" className="w-full h-full object-cover object-top" />
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#FFE6F2] text-[#000000] text-[9px] lg:text-[11px] font-medium px-1.5 py-0.5 whitespace-nowrap shadow-sm">
+              <div className="absolute top-[65%] md:top-[63%] left-[22%] md:left-[32%] z-30 pointer-events-auto">
+                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF2E93] relative shadow-lg">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Guru" className="w-full h-full object-cover object-bottom" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-pink-200">
                     Guru & ASN
                   </div>
                 </div>
-                {/* Tooltip (Left) */}
-                <div className="absolute bottom-[60%] right-[90%] mr-4 bg-white rounded-sm shadow-2xl p-2 lg:p-3 w-[160px] lg:w-[200px] flex items-start gap-2 z-40">
-                  <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-[#FF5A43] shrink-0 text-white flex items-center justify-center text-[10px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[13px] lg:text-[16px] font-serif tracking-tight leading-[1.1] text-[#0A192F]">Pastikan naskah sesuai format selingkung.</p>
+                {/* Tooltip (Below on mobile, Left on desktop) */}
+                <div className="absolute top-[105%] md:top-auto md:bottom-[60%] left-[-15px] md:left-auto md:right-[75%] mt-2 md:mt-0 md:mr-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[160px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[10px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Pastikan naskah<br></br> sesuai format<br></br> selingkung.</p>
                 </div>
               </div>
 
               {/* 4. Peneliti Institusi (BLUE) */}
-              <div className="absolute top-[40%] lg:top-[40%] left-[55%] lg:left-[62%] z-30 pointer-events-auto group hidden sm:block">
-                <div className="w-[150px] lg:w-[190px] h-[180px] lg:h-[230px] bg-[#2E99FF] relative transition-transform group-hover:-translate-y-1">
-                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="Peneliti" className="w-full h-full object-cover object-top" />
-                  <div className="absolute -bottom-2 -left-2 bg-[#E6F2FF] text-[#000000] text-[9px] lg:text-[11px] font-medium px-1.5 py-0.5 whitespace-nowrap">
+              <div className="absolute top-[55%] md:top-[45%] left-[62%] md:left-[57%] z-30 pointer-events-auto">
+                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Akademisi" className="w-full h-full object-cover object-bottom" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-blue-200">
                     Akademisi
                   </div>
                 </div>
-                {/* Tooltip (Right) */}
-                <div className="absolute top-[20%] left-[90%] ml-4 bg-white rounded-sm shadow-2xl p-2 lg:p-3 w-[160px] lg:w-[200px] flex items-start gap-2 z-40">
-                  <div className="w-4 h-4 lg:w-5 lg:h-5 rounded-full bg-[#FF5A43] shrink-0 text-white flex items-center justify-center text-[10px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[13px] lg:text-[16px] font-serif tracking-tight leading-[1.1] text-[#0A192F]">Tingkatkan reputasi kampus via Scopus.</p>
+                {/* Tooltip (Below on mobile, Right on desktop) */}
+                <div className="absolute top-[105%] md:top-[20%] right-[-15px] md:right-auto md:left-[75%] mt-2 md:mt-0 md:ml-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[160px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[10px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Tingkatkan reputasi<br></br> kampus via<br></br> Scopus.</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Spacer to push section height down equivalent to the blob's visible height below Y=0 */}
-          <div className="w-full h-[150px] lg:h-[650px]"></div>
+          <div className="w-full h-[380px] sm:h-[450px] lg:h-[650px]"></div>
         </div>
 
         {/* 2. RIGHT COLUMN: Standard Flex Text Box */}

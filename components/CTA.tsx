@@ -48,7 +48,19 @@ const steppedMaskPattern = [
   []                     // Row 27: Clean
 ];
 
-export default function CTA() {
+interface CTAProps {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export default function CTA({
+  title = "Solusi Cerdas untuk Skalabilitas Pendidikan",
+  description = "Optimalkan manajemen dan visibilitas institusi Anda. Dengan dukungan sistem berbasis web yang andal dan strategi digital marketing yang terukur.",
+  buttonText = "Mulai Konsultasi Gratis",
+  buttonLink = "#kontak",
+}: CTAProps) {
   return (
     <section className="relative w-full bg-white pt-10 pb-20 overflow-hidden font-sans lg:min-h-[600px] xl:min-h-[750px]">
       <div className="w-full mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-between relative max-w-[1500px]">
@@ -100,13 +112,14 @@ export default function CTA() {
 
           {/* Text Content - Fits completely inside the armpit on desktop, stacked neatly on mobile */}
           <div className="flex flex-col items-start text-left mt-4 lg:mt-0 max-w-[550px] relative z-20 lg:ml-[120px] xl:ml-[160px] lg:pt-[20px]">
-            <h2 className="text-[36px] sm:text-[48px] md:text-[60px] font-serif font-normal text-[#000033] leading-[1.1] tracking-tight mb-4" style={{ WebkitTextStroke: "0.8px currentColor" }}>
-              Solusi Cerdas untuk Skalabilitas Pendidikan
+            <h2 className="text-[36px] sm:text-[48px] md:text-[54px] lg:text-[60px] font-serif font-normal text-[#000033] leading-[1.1] tracking-tight mb-4" style={{ WebkitTextStroke: "0.8px currentColor" }}>
+              {title}
             </h2>
             <p className="text-[#475569] text-sm md:text-[16px] leading-relaxed mb-8 font-sans font-medium max-w-[480px]">
-              Optimalkan manajemen dan visibilitas institusi Anda. Dengan dukungan sistem berbasis web yang andal dan strategi digital marketing yang terukur. </p>
-            <Link href="#kontak" className="bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
-              Mulai Konsultasi Gratis
+              {description}
+            </p>
+            <Link href={buttonLink} className="bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
+              {buttonText}
             </Link>
           </div>
 

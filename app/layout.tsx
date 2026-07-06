@@ -28,6 +28,9 @@ const featureFont = localFont({
 export const metadata: Metadata = {
   title: "Nusa Agency | Creative Digital Partner",
   description: "Nusa Agency membantu bisnis, lembaga, dan komunitas tumbuh melalui teknologi, desain, dan strategi digital yang relevan.",
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({

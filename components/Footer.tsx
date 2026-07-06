@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="mb-8">
               <h4 className="font-bold text-[14px] text-white mb-4">SOLUSI DIGITAL ↗</h4>
               <ul className="space-y-3">
-                <li><Link href="#contact" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Web Dev & OJS</Link></li>
+                <li><Link href="/services/web-dev-ojs" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Web Dev & OJS</Link></li>
                 <li><Link href="/services/journal-publication" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Publikasi Jurnal</Link></li>
                 <li><Link href="#contact" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Digital Marketing</Link></li>
               </ul>
@@ -94,8 +94,8 @@ export default function Footer() {
                 <Link href="#kontak" className="w-full bg-[#FF9F1C] hover:bg-[#E68A00] text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors">
                   Contact Us
                 </Link>
-                <Link href="#masuk" className="w-full bg-transparent border border-[#333] hover:border-white text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors">
-                  Log In
+                <Link href="#customer-care" className="w-full bg-transparent border border-[#333] hover:border-white text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors">
+                  Customer Care
                 </Link>
               </div>
             </div>
@@ -108,13 +108,12 @@ export default function Footer() {
           
           {/* Giant Logo */}
           <div>
-            <Link href="/" className="flex items-center gap-3 text-[32px] md:text-[42px] font-serif font-bold text-white leading-none tracking-tight">
+            <Link href="/" className="inline-block transition-opacity hover:opacity-80">
               <img 
-                src="/icon.png" 
-                alt="NusaEducation Logo" 
-                className="w-10 md:w-14 h-auto object-contain brightness-0 invert opacity-90"
+                src="https://ik.imagekit.io/yqhp1cmbp/Mask%20group%20(2).png" 
+                alt="Nusa Education Logo" 
+                className="h-12 md:h-16 w-auto object-contain opacity-90 mix-blend-screen"
               />
-              Nusa Education
             </Link>
           </div>
 

@@ -108,8 +108,8 @@ export default function HeroSection() {
         </div>
 
         {/* Right Side: Graphics Placeholder */}
-        <div className="w-full lg:w-[45%] relative h-[400px] lg:h-full mt-12 lg:mt-0 pointer-events-none z-10 flex items-center justify-center">
-          
+        <div className="w-full lg:w-[45%] relative h-[400px] lg:h-full mt-28 md:mt-32 lg:mt-0 pointer-events-none z-10 flex items-center justify-center">
+
           <style>{`
             @keyframes eightBitJitter {
               0%, 100% { transform: translate(0, 0); }
@@ -125,7 +125,7 @@ export default function HeroSection() {
           {/* Central Anchor for Graphics */}
           <div className="relative w-[336px] h-[336px] md:w-[480px] md:h-[480px] lg:w-[528px] lg:h-[528px]">
             {/* 1. The Deep Green Stepped Background Puzzle Piece */}
-            <div 
+            <div
               className="absolute inset-0 bg-[#0B3A1C] z-0 transition-all duration-500"
               style={{
                 clipPath: `polygon(
@@ -137,7 +137,7 @@ export default function HeroSection() {
               }}
             >
               {/* Fine Grid Overlay */}
-              <div 
+              <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.5) 1px, transparent 1px)`,
@@ -145,7 +145,7 @@ export default function HeroSection() {
                   backgroundPosition: '0 0'
                 }}
               ></div>
-              
+
               {/* Eraser Blocks to create patchy grid effect (Aligned to 16px grid) */}
               <div className="absolute bg-[#0B3A1C]" style={{ top: '32px', left: '64px', width: '128px', height: '96px' }}></div>
               <div className="absolute bg-[#0B3A1C]" style={{ top: '160px', right: '48px', width: '144px', height: '160px' }}></div>
@@ -155,8 +155,8 @@ export default function HeroSection() {
             </div>
 
             {/* 4. Pink Polka Dot Square (8-bit Jitter) */}
-            <div className="absolute -bottom-10 -left-10 lg:-bottom-16 lg:-left-16 w-[160px] h-[160px] lg:w-[220px] lg:h-[220px] z-10 rotate-45 shadow-2xl">
-              <div 
+            <div className="absolute -bottom-10 -left-10 lg:-bottom-16 lg:-left-16 w-[160px] h-[160px] lg:w-[220px] lg:h-[220px] z-10 rotate-45">
+              <div
                 className="w-full h-full bg-[#FF66CC] animate-8bit"
                 style={{
                   backgroundImage: `radial-gradient(circle, #FF1A8C 10px, transparent 10.5px)`,
@@ -168,8 +168,8 @@ export default function HeroSection() {
 
             {/* 5. Weird Green Triangle (8-bit Jitter) */}
             <div className="absolute -top-8 -right-8 lg:-top-16 lg:-right-16 w-[140px] h-[180px] lg:w-[200px] lg:h-[260px] z-10 pointer-events-none">
-              <div 
-                className="w-full h-full bg-[#A3E635]/90 animate-8bit shadow-2xl"
+              <div
+                className="w-full h-full bg-[#A3E635]/90 animate-8bit"
                 style={{
                   clipPath: 'polygon(70% 0%, 0% 90%, 100% 70%)'
                 }}
@@ -177,50 +177,50 @@ export default function HeroSection() {
             </div>
 
             {/* 6. Main Photo Frame Placeholder */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[560px] bg-white shadow-2xl border border-[#E71D36]/40">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[560px] bg-white border border-[#E71D36]/40">
               {/* User provided hero image */}
-              <img 
-                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(2).png" 
-                alt="Hero Image Nusa Education" 
+              <img
+                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(2).png"
+                alt="Hero Image Nusa Education"
                 className="w-full h-auto block"
               />
             </div>
           </div>
 
           {/* 2. Top-Left Floating Cluster (Dosen) */}
-          <div className="absolute top-[5%] md:top-[10%] left-0 lg:left-0 xl:-left-8 z-20 pointer-events-none animate-fade-in-up delay-100">
+          <div className="absolute top-[5%] md:top-[-5%] left-0 lg:left-0 xl:-left-8 z-20 pointer-events-none animate-fade-in-up delay-100">
             <div className="relative">
               {/* Avatar + Label */}
-              <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex items-end">
-                <div className="w-12 h-12 rounded-full bg-[#FF1A8C] p-[2px] z-10 overflow-hidden shadow-lg">
-                  <img src="https://i.pravatar.cc/150?img=5" className="w-full h-full rounded-full object-cover border-2 border-white" alt="Avatar Dosen" />
+              <div className="absolute -top-14 left-[75%] -translate-x-1/2">
+                <div className="w-14 h-14 rounded-full overflow-hidden bg-[#E6007E] z-10 relative flex items-center justify-center shadow-sm">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20(1).png" className="w-full h-full object-cover" alt="Avatar Dosen" />
                 </div>
-                <div className="bg-white/95 px-2.5 py-1 text-[12px] font-sans font-bold text-[#0A192F] shadow-md whitespace-nowrap -ml-3 mb-1 z-20">
+                <div className="absolute -bottom-2 left-1/2 translate-x-1 bg-[#e39bc3] px-1 text-[16px] font-sans font-bold text-[#0A192F] whitespace-nowrap z-20 shadow-sm">
                   Dosen
                 </div>
               </div>
-              
+
               {/* Big Text */}
-              <div className="bg-[#FFC2E2] px-4 py-1 shadow-2xl">
+              <div className="bg-[#FFC2E2] px-5 py-2">
                 <span className="font-serif text-[42px] lg:text-[56px] text-[#E6007E] leading-none tracking-tight" style={{ WebkitTextStroke: "0.5px currentColor" }}>Jafung</span>
               </div>
             </div>
           </div>
 
           {/* 3. Bottom-Right Floating Cluster (Mahasiswa) */}
-          <div className="absolute bottom-[5%] md:bottom-[10%] right-0 lg:right-0 xl:-right-8 z-20 pointer-events-none animate-fade-in-up delay-200">
+          <div className="absolute bottom-[5%] md:bottom-[-5%] right-0 lg:right-0 xl:-right-8 z-20 pointer-events-none animate-fade-in-up delay-200">
             <div className="relative">
               {/* Big Text */}
-              <div className="bg-[#66FF33] px-4 py-1 shadow-2xl">
+              <div className="bg-[#66FF33] px-5 py-2">
                 <span className="font-serif text-[42px] lg:text-[56px] text-[#1E9900] leading-none tracking-tight" style={{ WebkitTextStroke: "0.5px currentColor" }}>Kelulusan</span>
               </div>
 
               {/* Avatar + Label */}
-              <div className="absolute -bottom-10 left-1/3 flex items-start">
-                <div className="w-12 h-12 rounded-full bg-[#86EFAC] p-[2px] z-10 overflow-hidden shadow-lg">
-                  <img src="https://i.pravatar.cc/150?img=11" className="w-full h-full rounded-full object-cover border-2 border-white" alt="Avatar Mahasiswa" />
+              <div className="absolute -bottom-7 left-[25%] -translate-x-1/2">
+                <div className="w-14 h-14 rounded-full overflow-hidden bg-[#1E9900] z-10 relative flex items-center justify-center shadow-sm">
+                  <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(2).png" className="w-full h-full object-cover" alt="Avatar Mahasiswa" />
                 </div>
-                <div className="bg-[#D1F4E0] px-2.5 py-1 text-[12px] font-sans font-bold text-[#0A192F] shadow-md whitespace-nowrap -ml-3 mt-4 z-20">
+                <div className="absolute -bottom-2 left-1/2 translate-x-2 bg-[#bcf8ad] px-1 text-[16px] font-sans font-bold text-[#0A192F] whitespace-nowrap z-20 shadow-sm">
                   Mahasiswa
                 </div>
               </div>
