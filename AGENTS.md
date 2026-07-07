@@ -7,12 +7,12 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # NusaEducation Design System & Art Style Guide
 This guide dictates the visual identity and UI/UX patterns for the NusaEducation project. Always adhere to these rules for future development to maintain consistency with the newly revamped design (inspired by Jasper.ai / Modern Premium SaaS).
 
-## 1. Core Aesthetic (Modern Premium & "Soft Brutalism")
-- **Vibe:** Clean, bold, highly legible, professional yet energetic. 
+## 1. Core Aesthetic (Modern Premium)
+- **Vibe:** Clean, elegant, highly legible, professional and soft. 
 - **Spaciousness:** Generous padding and margins. Let elements breathe (e.g., `py-16 md:py-20`).
 - **Container Layout:** Always use `max-w-[1380px] mx-auto px-6` for the main content container wrapper to maintain consistent width across all pages.
-- **Contrast:** High contrast between deep dark colors and bright, vibrant accents.
-- **Borders & Shadows:** Use distinct borders (`border-[#0A192F]`, `border-[#E0E7FF]`) alongside harsh or deep shadows (`shadow-2xl`, offset drop-shadows) rather than subtle, muddy shadows.
+- **Contrast:** High contrast between deep dark colors and bright, vibrant accents, but without being harsh.
+- **Borders & Shadows:** Use soft, modern shadows (`shadow-sm`, `shadow-md`, `shadow-lg`) and subtle borders (`border-slate-100`, `border-slate-200`). **AVOID harsh brutalist outlines, thick borders, or solid block shadows.**
 
 ## 2. Typography
 - **Headings (H1, H2, H3):** Use `font-serif` (maps to Playfair Display / Instrument Serif).
@@ -45,7 +45,7 @@ This guide dictates the visual identity and UI/UX patterns for the NusaEducation
   - Outline buttons use dark borders with transparent backgrounds, hovering to light gray (`hover:bg-slate-50`).
   - On mobile, ensure buttons are full-width (`w-full`) or comfortably side-by-side with minimum widths (`min-w-[140px]`) and generous padding (`py-3`).
 - **Cards (Floating/Static):**
-  - Use solid backgrounds with thick or distinct borders.
+  - Use clean backgrounds with soft rounded corners (`rounded-xl` or `rounded-2xl`) and subtle shadows. Do NOT use thick brutalist borders.
   - Interactive cards should have a translation and rotation on hover (e.g., `group-hover:-translate-y-4 group-hover:-rotate-3`).
 - **Animations:** 
   - Rely on `animate-fade-in-up` for entrance animations with staggered delays (`delay-100`, `delay-200`).

@@ -121,7 +121,7 @@ export default function PricingSection() {
         </div>
 
         {/* Toggle Button */}
-        <div className="flex bg-white mb-16 relative pointer-events-auto shadow-sm">
+        <div className="flex bg-white mb-16 relative pointer-events-auto">
           <button
             onClick={() => setCategory('nasional')}
             className={`px-3 sm:px-4 py-4 font-sans font-bold text-[15px] sm:text-[16px] transition-colors duration-300 ${category === 'nasional' ? 'bg-[#FF9F1C] text-white' : 'bg-white text-[#0A192F] hover:bg-slate-50'}`}

@@ -36,7 +36,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100">
+    <header className="sticky top-0 z-50 w-full bg-white">
       {/* Navbar Container with higher z-index than the dropdown */}
       <div className="w-full px-4 md:px-6 flex h-20 items-center justify-between bg-white relative z-50">
         {/* Left: Logo */}
@@ -47,7 +47,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
         {/* Center: Links */}
         <nav className="hidden items-center gap-1 md:flex">
           <div className="relative group py-4">
-            <button className="relative group/nav px-4 py-2 overflow-hidden flex items-center gap-1 cursor-pointer">
+            <button className="relative group/nav px-2.5 py-2 overflow-hidden flex items-center gap-1 cursor-pointer">
               <div className="absolute inset-0 bg-[#FFE8CC] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-0"></div>
               <span className="relative z-10 text-[15px] text-[#0A192F] font-medium transition-colors flex items-center gap-1">Layanan Kami <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" /></span>
             </button>
@@ -152,7 +152,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
             </div>
           </div>
           {navItems.map((item, index) => (
-            <Link key={index} href={item.href} className="relative group/nav px-4 py-2 overflow-hidden flex items-center cursor-pointer">
+            <Link key={index} href={item.href} className="relative group/nav px-2.5 py-2 overflow-hidden flex items-center cursor-pointer">
               <div className={`absolute inset-0 ${hoverColors[index % hoverColors.length]} origin-left scale-x-0 group-hover/nav:scale-x-100 transition-transform duration-300 ease-out z-0`}></div>
               <span className="relative z-10 text-[15px] text-[#0A192F] font-medium">{item.label}</span>
             </Link>
@@ -161,7 +161,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
 
         {/* Right: Desktop Buttons */}
         <div className="hidden items-center gap-6 md:flex">
-          <Link href="#customer-care" className="cursor-pointer items-center text-[15px] font-semibold text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
+          <Link href="#customer-care" className="cursor-pointer items-center text-[15px] font-medium text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
             Customer Care
           </Link>
           <Link href="#kontak" className="flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
@@ -171,7 +171,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
 
         {/* Right: Mobile Trigger */}
         <div className="flex md:hidden items-center gap-5">
-          <Link href="#customer-care" className="text-[15px] font-semibold text-[#0A192F]">Customer Care</Link>
+          <Link href="#customer-care" className="text-[15px] font-medium text-[#0A192F]">Customer Care</Link>
           <button type="button" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-[#0A192F] transition-transform duration-300">
             {isMobileMenuOpen ? (
               <X className="w-7 h-7" strokeWidth={2.5} />
