@@ -52,7 +52,7 @@ export default function TargetAudienceSection() {
   return (
     <section
       id="target"
-      className="relative w-full bg-white font-sans pb-20 scroll-mt-20"
+      className="relative w-full bg-white font-sans pb-16 md:pb-20 lg:pb-24 scroll-mt-20"
       style={{ overflowX: 'clip' }}
     >
       {/* 
@@ -64,14 +64,14 @@ export default function TargetAudienceSection() {
 
         {/* 1. LEFT COLUMN: Green Blob Anchor */}
         {/* This column serves as the mathematical anchor for the absolute blob */}
-        <div className="w-full lg:w-[50%] relative min-h-[400px] lg:h-auto pointer-events-none mt-20 lg:mt-0">
+        <div className="w-full lg:w-[50%] relative min-h-[400px] lg:h-auto pointer-events-none mt-6 lg:mt-0">
 
           {/* 
                 Blob Wrapper
                 Anchored EXACTLY at top: 0 and right: -2px of the left column on desktop.
-                On mobile, centered and scaled to 100% of screen width.
+                On mobile, centered and gently scaled to 125vw.
               */}
-          <div className="absolute top-0 left-0 lg:left-auto lg:right-[-2px] w-full lg:w-[900px] lg:max-w-[55vw] z-20">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-auto lg:right-[-2px] w-[125vw] sm:w-[115vw] md:w-full lg:w-[900px] lg:max-w-[55vw] z-20">
 
             <div
               className="w-full relative"
@@ -107,68 +107,68 @@ export default function TargetAudienceSection() {
 
               {/* 1. Kampus & PT (RED/ORANGE) */}
               <div className="absolute top-[25%] md:top-[35%] left-[18%] md:left-[25%] z-30 pointer-events-auto">
-                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF4D2D] relative shadow-lg">
+                <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#FF4D2D] relative shadow-lg">
                   <img src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Kampus & PT" className="w-full h-full object-cover object-bottom" />
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-orange-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-orange-200">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-orange-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-orange-200">
                     Kampus & PT
                   </div>
                 </div>
                 {/* Tooltip (Above on mobile, Top-Left on desktop) */}
-                <div className="absolute bottom-[105%] md:bottom-[75%] left-[-15px] md:left-auto md:right-[60%] mb-2 md:mb-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[150px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
-                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[10px] md:text-[12px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Butuh portal OJS<br></br> terpusat untuk puluhan<br></br> program studi.</p>
+                <div className="absolute bottom-[105%] md:bottom-[75%] left-[-25px] md:left-auto md:right-[60%] mb-2 md:mb-4 bg-white rounded-sm shadow-xl p-2.5 md:p-1.5 w-[180px] md:w-[150px] lg:w-[200px] flex items-start gap-1.5 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-4 h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[11px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[13px] md:text-[13px] lg:text-[18px] font-serif tracking-tight leading-[1.3] text-[#0A192F]">Butuh portal OJS<br></br> terpusat untuk puluhan<br></br> program studi.</p>
                 </div>
               </div>
 
               {/* 2. Lembaga Riset (GREEN) */}
               <div className="absolute top-[15%] md:top-[15%] left-[58%] md:left-[50%] z-30 pointer-events-auto">
-                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
+                <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
                   <img src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Lembaga Riset" className="w-full h-full object-cover object-bottom" />
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-lime-200">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-lime-200">
                     Lembaga Riset
                   </div>
                 </div>
                 {/* Tooltip (Above on mobile, Right on desktop) */}
-                <div className="absolute bottom-[105%] md:bottom-auto top-auto md:top-[20%] right-[-15px] md:right-auto md:left-[75%] mb-2 md:mb-0 md:ml-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[150px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
-                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[10px] md:text-[12px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Wadah publikasi<br></br> hasil riset dan prosiding<br></br> antar anggota.</p>
+                <div className="absolute bottom-[105%] md:bottom-auto top-auto md:top-[20%] right-[-25px] md:right-auto md:left-[75%] mb-2 md:mb-0 md:ml-4 bg-white rounded-sm shadow-xl p-2.5 md:p-1.5 w-[180px] md:w-[150px] lg:w-[200px] flex items-start gap-1.5 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-4 h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[11px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[13px] md:text-[13px] lg:text-[18px] font-serif tracking-tight leading-[1.3] text-[#0A192F]">Wadah publikasi<br></br> hasil riset dan prosiding<br></br> antar anggota.</p>
                 </div>
               </div>
 
               {/* 3. Editor Jurnal (PINK) */}
               <div className="absolute top-[65%] md:top-[63%] left-[22%] md:left-[32%] z-30 pointer-events-auto">
-                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF2E93] relative shadow-lg">
+                <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#FF2E93] relative shadow-lg">
                   <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Editor Jurnal" className="w-full h-full object-cover object-bottom" />
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-pink-200">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-pink-200">
                     Editor Jurnal
                   </div>
                 </div>
                 {/* Tooltip (Below on mobile, Left on desktop) */}
-                <div className="absolute top-[105%] md:top-auto md:bottom-[60%] left-[-15px] md:left-auto md:right-[75%] mt-2 md:mt-0 md:mr-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[160px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
-                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[10px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Upgrade dari OJS 2<br></br> ke OJS 3 tanpa risiko<br></br> kehilangan data.</p>
+                <div className="absolute top-[105%] md:top-auto md:bottom-[60%] left-[-25px] md:left-auto md:right-[75%] mt-2 md:mt-0 md:mr-4 bg-white rounded-sm shadow-xl p-2.5 md:p-1.5 w-[180px] md:w-[160px] lg:w-[200px] flex items-start gap-1.5 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-4 h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[11px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[13px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.3] text-[#0A192F]">Upgrade dari OJS 2<br></br> ke OJS 3 tanpa risiko<br></br> kehilangan data.</p>
                 </div>
               </div>
 
               {/* 4. Penerbit Akademik (BLUE) */}
               <div className="absolute top-[55%] md:top-[45%] left-[62%] md:left-[57%] z-30 pointer-events-auto">
-                <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
+                <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
                   <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Penerbit Akademik" className="w-full h-full object-cover object-bottom" />
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-blue-200">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-blue-200">
                     Penerbit Akademik
                   </div>
                 </div>
                 {/* Tooltip (Below on mobile, Right on desktop) */}
-                <div className="absolute top-[105%] md:top-[20%] right-[-15px] md:right-auto md:left-[75%] mt-2 md:mt-0 md:ml-4 bg-white rounded-sm shadow-xl p-1 md:p-1.5 w-[130px] md:w-[160px] lg:w-[200px] flex items-start gap-1 md:gap-2 z-40 border border-gray-100">
-                  <div className="w-3 h-3 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[8px] lg:text-[12px] font-serif italic mt-0.5">j</div>
-                  <p className="text-[10px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.2] text-[#0A192F]">Infrastruktur server<br></br> kokoh untuk menampung<br></br> ribuan akses rutin.</p>
+                <div className="absolute top-[105%] md:top-[20%] right-[-25px] md:right-auto md:left-[75%] mt-2 md:mt-0 md:ml-4 bg-white rounded-sm shadow-xl p-2.5 md:p-1.5 w-[180px] md:w-[160px] lg:w-[200px] flex items-start gap-1.5 md:gap-2 z-40 border border-gray-100">
+                  <div className="w-4 h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 rounded-full bg-[#FF4D2D] shrink-0 text-white flex items-center justify-center text-[11px] lg:text-[12px] font-serif italic mt-0.5">j</div>
+                  <p className="text-[13px] md:text-[15px] lg:text-[18px] font-serif tracking-tight leading-[1.3] text-[#0A192F]">Infrastruktur server<br></br> kokoh untuk menampung<br></br> ribuan akses rutin.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Spacer to push section height down equivalent to the blob's visible height below Y=0 */}
-          <div className="w-full h-[380px] sm:h-[450px] lg:h-[650px]"></div>
+          {/* Spacer to push section height down exactly mathematically equivalent to the scaled blob's height */}
+          <div className="w-full h-[116vw] md:h-[93vw] lg:h-[550px] xl:h-[700px]"></div>
         </div>
 
         <style dangerouslySetInnerHTML={{

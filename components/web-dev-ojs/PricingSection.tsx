@@ -59,7 +59,7 @@ export default function PricingSection() {
       {
         name: "OJS Basic Start",
         desc: "Solusi cepat untuk peluncuran jurnal standar.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/image%201140.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: [
           "Hosting 1GB & Domain 1 Tahun", 
           "Instalasi & Kustomisasi 1 Jurnal", 
@@ -72,7 +72,7 @@ export default function PricingSection() {
       {
         name: "OJS Elite Prime",
         desc: "Paket lengkap dengan aktivasi DOI dan indeksasi dasar.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/Group%202659.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: [
           "Semua fitur Basic, ditambah:", 
           "Unlimited Hosting & Domain Kampus", 
@@ -86,7 +86,7 @@ export default function PricingSection() {
       {
         name: "OJS Royale All-In",
         desc: "Sistem premium persiapan akreditasi SINTA & Copernicus.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/Group%202658.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: [
           "Semua fitur Elite, ditambah:", 
           "Pendampingan Akreditasi SINTA", 
@@ -102,19 +102,19 @@ export default function PricingSection() {
       {
         name: "Migrasi Basic",
         desc: "Pindah dari OJS versi lama (OJS 2) ke versi 3 dengan aman.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/image%201128.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: ["Backup Seluruh Database", "Migrasi Data Artikel", "Migrasi Akun Pengguna", "Pengecekan Kompatibilitas", "Setup Ulang Plugin Standar"]
       },
       {
         name: "Migrasi Premium",
         desc: "Migrasi sistem sekaligus perombakan tampilan total.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/image%201141.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: ["Semua Fitur Migrasi Basic", "Perombakan Tema (Custom UI)", "Cleanup & Optimasi Database", "Perbaikan Link Error (404)", "Setup Ulang Indeksasi"]
       },
       {
         name: "Maintenance",
         desc: "Dukungan teknis bulanan untuk menjaga jurnal tetap prima.",
-        logo: "https://ik.imagekit.io/yqhp1cmbp/image%201141.png",
+        logo: "https://ik.imagekit.io/yqhp1cmbp/ojslogo.jpg",
         features: ["Backup Database Harian", "Update Versi Keamanan", "Pemantauan Server 24/7", "Bantuan Teknis Prioritas", "Laporan Performa Bulanan"]
       }
     ]
@@ -123,7 +123,7 @@ export default function PricingSection() {
   const currentPackages = packages[category];
 
   return (
-    <section id="pricing" className="relative w-full py-20 lg:py-32 overflow-hidden scroll-mt-20">
+    <section id="pricing" className="relative w-full py-16 md:py-20 lg:py-24 overflow-hidden scroll-mt-20">
 
       <InteractiveGridBackground />
 

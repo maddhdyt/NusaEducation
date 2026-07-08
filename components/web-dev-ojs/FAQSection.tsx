@@ -34,7 +34,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="w-full bg-white py-12 md:py-24 font-sans selection:bg-[#FF4500]/20 selection:text-[#0A192F] scroll-mt-20">
+    <section id="faq" className="w-full bg-white py-16 md:py-20 lg:py-24 font-sans selection:bg-[#FF4500]/20 selection:text-[#0A192F] scroll-mt-20">
       <div className="max-w-[1380px] mx-auto px-6 flex flex-col lg:flex-row gap-8 lg:gap-16 justify-between">
 
         {/* Left Column: Heading */}

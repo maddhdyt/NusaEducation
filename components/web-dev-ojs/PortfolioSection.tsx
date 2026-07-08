@@ -4,41 +4,41 @@ import { ArrowUpRight } from 'lucide-react';
 export default function PortfolioSection() {
   const portfolios = [
     {
-      name: "Jurnal Riset Teknologi & Sains",
-      institution: "Universitas Negeri Contoh",
-      work: "Migrasi OJS 3 & Kustomisasi UI",
+      name: "ARS University E-Journal",
+      institution: "LPPM Universitas BSI",
+      work: "Full Kustomisasi Tema OJS 3",
       status: "Terindeks SINTA 2",
       gradient: "from-blue-900 to-[#0A192F]",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+      image: "https://ik.imagekit.io/yqhp1cmbp/image1143.webp?updatedAt=1783492111936"
     },
     {
-      name: "Jurnal Medika Nusantara",
-      institution: "Lembaga Kesehatan Indonesia",
-      work: "Maintenance Server & Keamanan",
-      status: "Persiapan DOAJ",
+      name: "Celebes Nursing Journal",
+      institution: "Malata Sains Indonesia",
+      work: "Desain Header & Layout Kustom",
+      status: "Terindeks DOAJ",
       gradient: "from-[#FF9F1C] to-orange-800",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+      image: "https://ik.imagekit.io/yqhp1cmbp/image1142.webp?updatedAt=1783492111623"
     },
     {
-      name: "Jurnal Ekonomi & Bisnis",
-      institution: "Institut Manajemen Asia",
-      work: "Pembuatan OJS dari Nol",
+      name: "Jurnal Ekonomi dan Bisnis Islami",
+      institution: "Pusat Studi Ekonomi dan Bisnis Islam (PSEBI)",
+      work: "Redesain UI & Setup Indeksasi",
       status: "Terindeks SINTA 3",
       gradient: "from-emerald-900 to-green-900",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+      image: "https://ik.imagekit.io/yqhp1cmbp/image1146.webp?updatedAt=1783492111492"
     },
     {
-      name: "Jurnal Ilmu Sosial Humaniora",
-      institution: "Fakultas Ilmu Budaya",
-      work: "Setup Indeksasi & Desain Editorial",
-      status: "Terindeks SINTA 4",
+      name: "ALTAVERA Journal Publishing",
+      institution: "National Oceanographic Institute",
+      work: "Pembuatan OJS & Branding Jurnal",
+      status: "Persiapan Scopus",
       gradient: "from-purple-900 to-[#0A192F]",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+      image: "https://ik.imagekit.io/yqhp1cmbp/image1144.webp?updatedAt=1783492110587"
     }
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-white relative font-sans">
+    <section id="portfolio" className="py-16 md:py-20 lg:py-24 bg-white relative font-sans">
       <div className="container mx-auto px-6 max-w-[1380px]">
         
         {/* Header - Clean Editorial Centered */}

@@ -40,7 +40,7 @@ export default function AboutSection() {
   const scrollItems = [...resultItems, ...resultItems];
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden font-sans border-t border-gray-100">
+    <section id="about" className="py-16 md:py-20 lg:py-24 bg-[#FFFDF9] relative overflow-hidden font-sans">
       {/* Header */}
       <div className="container mx-auto px-4 max-w-4xl mb-16 text-center">
         <h2 className="text-3xl md:text-5xl lg:text-[3.75rem] font-serif text-[#1a1a1a] mb-6 tracking-tight leading-[1.15]" style={{ WebkitTextStroke: "1px currentColor" }}>
@@ -56,12 +56,12 @@ export default function AboutSection() {
 
       {/* Diagram Area */}
       <div ref={sectionRef} className="w-full max-w-6xl mx-auto px-6 relative mt-16 lg:mt-24">
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-16 lg:gap-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-0 lg:gap-12 relative z-10">
 
           {/* COLUMN 1: Context Layer */}
           <div className={`w-full lg:w-[26%] relative transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0ms' }}>
-            <div className="lg:h-[200px] flex flex-col justify-start">
-              <div className="inline-block bg-[#FF9F1C] text-white text-[14px] font-medium uppercase tracking-tight mb-2 self-start leading-tight px-0.5">
+            <div className="lg:h-[200px] flex flex-col items-center lg:items-start text-center lg:text-left justify-start">
+              <div className="inline-block bg-[#FF9F1C] text-white text-[14px] font-medium uppercase tracking-tight mb-2 self-center lg:self-start leading-tight px-0.5">
                 FOUNDATION LAYER
               </div>
               <h3 className="text-[2.5rem] font-serif text-[#1a1a1a] mb-4 tracking-tight leading-none" style={{ WebkitTextStroke: "1.2px currentColor" }}>OJS Core</h3>
@@ -99,16 +99,23 @@ export default function AboutSection() {
             </div>
 
             {/* Blocky Tags */}
-            <div className="flex flex-col gap-1.5 items-start mt-2">
+            <div className="flex flex-col gap-1.5 items-center lg:items-start mt-2 w-full">
               <span className="bg-[#93C5FD] text-[#0a192f] font-mono font-semibold text-[16px] tracking-wide px-3 py-1 w-max cursor-default">Standar SINTA</span>
               <span className="bg-[#3B82F6] text-white font-mono font-semibold text-[16px] tracking-wide px-3 py-1 w-max cursor-default">Keamanan SSL</span>
               <span className="bg-[#2563EB] text-white font-mono font-semibold text-[16px] tracking-wide px-3 py-1 w-max cursor-default">Optimasi DB</span>
               <span className="bg-[#1D4ED8] text-white font-mono font-semibold text-[16px] tracking-wide px-3 py-1 w-max cursor-default">LiteSpeed</span>
             </div>
+
+            {/* Mobile Vertical Dashed Line 1 */}
+            <div className="flex lg:hidden justify-center py-6 w-full relative z-0">
+              <svg width="3" height="60" className="overflow-visible">
+                <line x1="1.5" y1="0" x2="1.5" y2="60" stroke="#1a1a1a" strokeWidth="2.5" strokeDasharray="8 8" className="animate-flow-vertical" />
+              </svg>
+            </div>
           </div>
 
           {/* COLUMN 2: Content Pipeline */}
-          <div className={`w-full lg:w-max lg:max-w-[380px] relative mt-8 lg:mt-0 p-6 lg:px-6 lg:py-5 overflow-visible transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
+          <div className={`w-full lg:w-max lg:max-w-[380px] relative mt-0 lg:mt-0 px-0 lg:px-6 lg:py-5 overflow-visible transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
             {/* Bracket-style dashed border — animated flowing dashes */}
             <div className="absolute inset-0 pointer-events-none hidden lg:block">
               {/* Left vertical line (Splits outward from 210px) */}
@@ -155,16 +162,16 @@ export default function AboutSection() {
 
             </div>
 
-            <div className="relative z-10 flex flex-col h-full">
-              <h3 className="text-4xl lg:text-[2.5rem] font-serif text-[#1a1a1a] mb-4 tracking-tight leading-none text-left" style={{ WebkitTextStroke: "1.2px currentColor" }}>
+            <div className="relative z-10 flex flex-col h-full items-center lg:items-start text-center lg:text-left">
+              <h3 className="text-4xl lg:text-[2.5rem] font-serif text-[#1a1a1a] mb-4 tracking-tight leading-none" style={{ WebkitTextStroke: "1.2px currentColor" }}>
                 Alur Eksekusi
               </h3>
-              <p className="text-[#1a1a1a] font-medium text-[13px] leading-snug mb-8 text-left lg:max-w-[280px]">
+              <p className="text-[#1a1a1a] font-medium text-[13px] leading-snug mb-8 lg:max-w-[280px]">
                 Mulai dari kustomisasi tampilan hingga integrasi plugin krusial. Setiap tahapan dieksekusi secara presisi untuk memastikan jurnal Anda memenuhi standar akreditasi tanpa kerumitan teknis.
               </p>
 
               {/* Stacked Solid Blocks */}
-              <div className="space-y-3 lg:space-y-4 flex-grow flex flex-col items-start mt-4 relative z-10">
+              <div className="space-y-3 lg:space-y-4 flex-grow flex flex-col items-center lg:items-start mt-4 relative z-10 w-full">
 
                 {/* 1. Theme */}
                 <div className="group flex items-start cursor-pointer w-max">
@@ -175,7 +182,7 @@ export default function AboutSection() {
                     {/* State 1: Big Text (Collapses) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[1fr] group-hover:grid-rows-[0fr]">
                       <div className="min-h-0 overflow-visible">
-                        <div className="bg-[#FFD2CC] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                        <div className="bg-[#FFD2CC] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-center lg:origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
                           <span className="font-serif text-[4rem] md:text-[4.75rem] lg:text-[5.5rem] text-[#1a1a1a] leading-[0.85] font-normal" style={{ WebkitTextStroke: "0.4px currentColor", fontStretch: "ultra-condensed" }}>Theme</span>
                         </div>
                       </div>
@@ -183,7 +190,7 @@ export default function AboutSection() {
                     {/* State 2: Detail Box (Expands) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <div className="bg-[#FFF5F4] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col">
+                        <div className="bg-[#FFF5F4] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col text-left">
                           <p className="text-[#0a192f] font-medium text-[13.5px] leading-snug mb-2">
                             Membangun identitas visual jurnal Anda dengan desain profesional, responsif, dan standar akademis global.
                           </p>
@@ -205,7 +212,7 @@ export default function AboutSection() {
                     {/* State 1: Big Text (Collapses) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[1fr] group-hover:grid-rows-[0fr]">
                       <div className="min-h-0 overflow-visible">
-                        <div className="bg-[#FDF07B] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                        <div className="bg-[#FDF07B] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-center lg:origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
                           <span className="font-serif text-[4rem] md:text-[4.75rem] lg:text-[5.5rem] text-[#1a1a1a] leading-[0.85] font-normal" style={{ WebkitTextStroke: "0.4px currentColor", fontStretch: "ultra-condensed" }}>Plugin</span>
                         </div>
                       </div>
@@ -213,7 +220,7 @@ export default function AboutSection() {
                     {/* State 2: Detail Box (Expands) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <div className="bg-[#FEFCE8] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col">
+                        <div className="bg-[#FEFCE8] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col text-left">
                           <p className="text-[#0a192f] font-medium text-[13.5px] leading-snug mb-2">
                             Integrasi fitur krusial seperti statistik, antispam, dan tools editorial otomatis untuk efisiensi workflow.
                           </p>
@@ -235,7 +242,7 @@ export default function AboutSection() {
                     {/* State 1: Big Text (Collapses) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[1fr] group-hover:grid-rows-[0fr]">
                       <div className="min-h-0 overflow-visible">
-                        <div className="bg-[#CDEAC9] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                        <div className="bg-[#CDEAC9] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-center lg:origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
                           <span className="font-serif text-[4rem] md:text-[4.75rem] lg:text-[5.5rem] text-[#1a1a1a] leading-[0.85] font-normal" style={{ WebkitTextStroke: "0.4px currentColor", fontStretch: "ultra-condensed" }}>Crossref</span>
                         </div>
                       </div>
@@ -243,7 +250,7 @@ export default function AboutSection() {
                     {/* State 2: Detail Box (Expands) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <div className="bg-[#F0FDF4] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col">
+                        <div className="bg-[#F0FDF4] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col text-left">
                           <p className="text-[#0a192f] font-medium text-[13.5px] leading-snug mb-2">
                             Sistem automasi DOI dan metadata deposition yang menjamin setiap artikel terhubung secara permanen.
                           </p>
@@ -265,7 +272,7 @@ export default function AboutSection() {
                     {/* State 1: Big Text (Collapses) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[1fr] group-hover:grid-rows-[0fr]">
                       <div className="overflow-hidden">
-                        <div className="bg-[#A8D7FA] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                        <div className="bg-[#A8D7FA] px-3 lg:px-4 py-0 flex items-center transform scale-x-[0.8] origin-center lg:origin-left transition-opacity duration-300 opacity-100 group-hover:opacity-0">
                           <span className="font-serif text-[4rem] md:text-[4.75rem] lg:text-[5.5rem] text-[#1a1a1a] leading-[0.85] font-normal" style={{ WebkitTextStroke: "0.4px currentColor", fontStretch: "ultra-condensed" }}>Indeks</span>
                         </div>
                       </div>
@@ -273,7 +280,7 @@ export default function AboutSection() {
                     {/* State 2: Detail Box (Expands) */}
                     <div className="grid transition-all duration-300 ease-in-out grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <div className="bg-[#EFF6FF] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col">
+                        <div className="bg-[#EFF6FF] px-4 py-3 w-[260px] transition-opacity duration-300 opacity-0 group-hover:opacity-100 flex flex-col text-left">
                           <p className="text-[#0a192f] font-medium text-[13.5px] leading-snug mb-2">
                             Kepatuhan penuh pada standar metadata untuk meloloskan jurnal ke Google Scholar, DOAJ, hingga Scopus.
                           </p>
@@ -288,11 +295,18 @@ export default function AboutSection() {
 
               </div>
             </div>
+
+            {/* Mobile Vertical Dashed Line 2 */}
+            <div className="flex lg:hidden justify-center py-6 w-full relative z-0">
+              <svg width="3" height="60" className="overflow-visible">
+                <line x1="1.5" y1="0" x2="1.5" y2="60" stroke="#1a1a1a" strokeWidth="2.5" strokeDasharray="8 8" className="animate-flow-vertical" />
+              </svg>
+            </div>
           </div>
 
           {/* COLUMN 3: Results */}
-          <div className={`w-full lg:w-[30%] mt-8 lg:mt-0 flex flex-col justify-start transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
-            <div className="inline-block bg-[#FF9F1C] text-white text-[14px] font-medium uppercase tracking-tight mb-2 self-start leading-tight px-0.5">
+          <div className={`w-full lg:w-[30%] mt-0 lg:mt-0 flex flex-col items-center lg:items-start text-center lg:text-left justify-start transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
+            <div className="inline-block bg-[#FF9F1C] text-white text-[14px] font-medium uppercase tracking-tight mb-2 self-center lg:self-start leading-tight px-0.5">
               RESULTS
             </div>
             <h3 className="text-[2.5rem] font-serif text-[#1a1a1a] mb-3 tracking-tight leading-none" style={{ WebkitTextStroke: "1.2px currentColor" }}>Siap Rilis</h3>
@@ -303,12 +317,12 @@ export default function AboutSection() {
             <div className="w-full h-px bg-gray-300" />
 
             {/* Infinite Vertical Scroll List */}
-            <div className="relative h-[360px] overflow-hidden pl-1 pt-4">
-              <div className="animate-scroll-down">
+            <div className="relative h-[360px] overflow-hidden pl-1 pt-4 w-full flex flex-col items-center lg:items-start">
+              <div className="animate-scroll-down w-max">
                 {scrollItems.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3.5 text-[#0a192f] font-mono font-medium text-[17px] tracking-[0.03em] py-2 pl-1"
+                    className="flex items-center justify-start gap-3.5 text-[#0a192f] font-mono font-medium text-[17px] tracking-[0.03em] py-2 pl-1"
                     style={{ WebkitTextStroke: "0.3px currentColor" }}
                   >
                     <div className={`w-[17px] h-[17px] ${item.color} rotate-45 flex-shrink-0 border-[1.9px] border-[#0a192f]`} />
@@ -317,7 +331,7 @@ export default function AboutSection() {
                 ))}
               </div>
               {/* Fade overlays */}
-              <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-white via-white/95 to-transparent pointer-events-none z-10" />
+              <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#FFFDF9] via-[#FFFDF9]/95 to-transparent pointer-events-none z-10" />
             </div>
           </div>
 

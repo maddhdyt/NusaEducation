@@ -40,11 +40,11 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-24 bg-white relative font-sans">
+    <section id="features" className="py-16 md:py-20 lg:py-24 bg-white relative font-sans">
       <div className="container mx-auto px-6 max-w-[1380px]">
         
         {/* Header - Clean Editorial Style */}
-        <div className="max-w-4xl mb-16 relative z-10">
+        <div className="max-w-4xl mb-8 lg:mb-16 relative z-10">
           <h2 className="text-[#FF9F1C] font-serif italic text-xl tracking-tight mb-4">Layanan Pembuatan OJS</h2>
           <h3 className="text-4xl md:text-5xl lg:text-[4rem] font-serif text-[#0A192F] leading-[1.05] tracking-tight mb-6" style={{ WebkitTextStroke: "1px currentColor" }}>
             Lancar diakses. Bebas masalah.<br className="hidden lg:block" /> Siap untuk akreditasi.
@@ -57,10 +57,10 @@ export default function FeaturesSection() {
         {/* The Feature List - Elegant Horizontal Bands */}
         <div className="w-full flex flex-col">
           {features.map((feat, idx) => (
-            <div key={idx} className={`group flex flex-col lg:flex-row lg:items-center justify-between py-12 lg:py-16 border-b border-slate-200 transition-colors duration-500 cursor-default ${feat.bgHover} px-4 lg:px-8 -mx-4 lg:-mx-8`}>
+            <div key={idx} className={`group flex flex-col lg:flex-row lg:items-center justify-between py-8 lg:py-16 border-b border-slate-200 transition-colors duration-500 cursor-default ${feat.bgHover} px-4 lg:px-8 -mx-4 lg:-mx-8`}>
               
               {/* Number */}
-              <div className="w-full lg:w-2/12 mb-4 lg:mb-0">
+              <div className="w-full lg:w-2/12 mb-2 lg:mb-0">
                 <span className={`text-4xl lg:text-5xl font-mono text-slate-300 transition-colors duration-500 ${feat.color}`}>
                   {feat.num}
                   <span className="text-xl text-slate-200 ml-1">/</span>
@@ -68,8 +68,8 @@ export default function FeaturesSection() {
               </div>
               
               {/* Title */}
-              <div className="w-full lg:w-5/12 mb-6 lg:mb-0">
-                <h4 className="text-4xl lg:text-[3.25rem] font-serif text-[#0A192F] tracking-tight group-hover:translate-x-6 transition-transform duration-700 ease-[0.16,1,0.3,1]">
+              <div className="w-full lg:w-5/12 mb-3 lg:mb-0">
+                <h4 className="text-3xl lg:text-[3.25rem] font-serif text-[#0A192F] tracking-tight group-hover:translate-x-6 transition-transform duration-700 ease-[0.16,1,0.3,1]">
                   {feat.title}
                 </h4>
               </div>
