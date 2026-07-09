@@ -24,8 +24,10 @@ export default function CustomCursor() {
     if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
       return;
     }
-    setIsTouchDevice(false);
-    setIsVisible(true);
+    const initTimer = setTimeout(() => {
+      setIsTouchDevice(false);
+      setIsVisible(true);
+    }, 0);
 
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);

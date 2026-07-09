@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function TargetAudienceSection() {
   /**
@@ -114,7 +115,7 @@ export default function TargetAudienceSection() {
               {/* 1. Dosen / Peneliti (RED/ORANGE) */}
               <div className="absolute top-[25%] md:top-[35%] left-[18%] md:left-[25%] z-30 pointer-events-auto">
                 <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF4D2D] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Dosen" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Dosen" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-orange-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-orange-200">
                     Dosen Akademik
                   </div>
@@ -129,7 +130,7 @@ export default function TargetAudienceSection() {
               {/* 2. Mahasiswa Pascasarjana (GREEN) */}
               <div className="absolute top-[15%] md:top-[15%] left-[58%] md:left-[50%] z-30 pointer-events-auto">
                 <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Mahasiswa" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Mahasiswa" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-lime-200">
                     Mahasiswa S2/S3
                   </div>
@@ -144,7 +145,7 @@ export default function TargetAudienceSection() {
               {/* 3. Guru & ASN (PINK) */}
               <div className="absolute top-[65%] md:top-[63%] left-[22%] md:left-[32%] z-30 pointer-events-auto">
                 <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#FF2E93] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Guru" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Guru" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-pink-200">
                     Guru & ASN
                   </div>
@@ -159,7 +160,7 @@ export default function TargetAudienceSection() {
               {/* 4. Peneliti Institusi (BLUE) */}
               <div className="absolute top-[55%] md:top-[45%] left-[62%] md:left-[57%] z-30 pointer-events-auto">
                 <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Akademisi" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Akademisi" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-blue-200">
                     Akademisi
                   </div>

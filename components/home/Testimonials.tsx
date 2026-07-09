@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 // Mock data: Transaction proofs
 const allProofs = [
@@ -18,7 +18,7 @@ const allProofs = [
 ];
 
 // The Soft Digital Receipt Card
-const ReceiptCard = ({ data }: { data: any }) => (
+const ReceiptCard = ({ data }: { data: { id: string, date: string, impact: string, client: string, image: string } }) => (
   <div className="w-[280px] md:w-[320px] shrink-0 bg-slate-50 border border-slate-200 flex flex-col p-4 md:p-5 font-mono relative group hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-300">
 
     <div className="flex flex-col flex-1 h-full">
@@ -33,10 +33,13 @@ const ReceiptCard = ({ data }: { data: any }) => (
 
       {/* The Screenshot Thumbnail */}
       <div className="relative w-full aspect-[9/16] border border-slate-200 bg-white overflow-hidden mt-auto shadow-sm">
-        <img
+        <Image
           src={data.image}
           alt="Proof"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          fill
+          loading="lazy"
+          sizes="(max-width: 768px) 300px, 320px"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
     </div>

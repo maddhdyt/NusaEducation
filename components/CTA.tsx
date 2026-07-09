@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 // 1 = grey square + dark green circle, 0 = empty
@@ -59,7 +60,7 @@ export default function CTA({
   title = "Solusi Cerdas untuk Skalabilitas Pendidikan",
   description = "Optimalkan manajemen dan visibilitas institusi Anda. Dengan dukungan sistem berbasis web yang andal dan strategi digital marketing yang terukur.",
   buttonText = "Mulai Konsultasi Gratis",
-  buttonLink = "#kontak",
+  buttonLink = "https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20solusi%20untuk%20institusi%20saya.",
 }: CTAProps) {
   return (
     <section className="relative w-full bg-white pt-10 pb-20 overflow-hidden font-sans lg:min-h-[600px] xl:min-h-[750px]">
@@ -118,9 +119,9 @@ export default function CTA({
             <p className="text-[#475569] text-sm md:text-[16px] leading-relaxed mb-8 font-sans font-medium max-w-[480px]">
               {description}
             </p>
-            <Link href={buttonLink} className="bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
+            <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
               {buttonText}
-            </Link>
+            </a>
           </div>
 
         </div>
@@ -129,10 +130,13 @@ export default function CTA({
         <div className="w-full lg:w-[45%] xl:w-[50%] h-[350px] sm:h-[500px] lg:h-[600px] xl:h-[750px] relative shrink-0 z-0">
 
           {/* The actual photo */}
-          <img
+          <Image
             src="https://ik.imagekit.io/yqhp1cmbp/handsome-asian-student-explaining-something-university-mates-holding-economic-graphs%201.png"
             alt="Team working"
-            className="w-full h-full object-cover object-left-top lg:object-center"
+            fill
+            loading="lazy"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover object-left-top lg:object-center"
           />
 
           {/* The Stepped/Pixelated Mask Overlay */}

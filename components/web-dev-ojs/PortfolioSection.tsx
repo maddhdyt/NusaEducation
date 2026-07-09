@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function PortfolioSection() {
@@ -62,10 +63,13 @@ export default function PortfolioSection() {
                 
                 {item.image ? (
                   /* Tampilan Jika Ada Gambar Asli */
-                  <img 
+                  <Image 
                     src={item.image} 
                     alt={item.name} 
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" 
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-[0.16,1,0.3,1]" 
                   />
                 ) : (
                   /* Fallback Placeholder (Tampil jika image: "") */

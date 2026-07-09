@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function HeroSection() {
@@ -29,12 +30,12 @@ export default function HeroSection() {
           >
             Lihat Portofolio
           </Link>
-          <Link 
-            href="#pricing" 
+          <a 
+            href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20berencana%20membuat%20%2F%20mengembangkan%20Website%20Kampus%20%26%20Sistem%20OJS.%20Bisa%20menjadwalkan%20sesi%20konsultasi%3F" target="_blank" rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-3.5 bg-[#FF9F1C] text-white font-semibold tracking-wide text-[15px] hover:bg-[#E68A00] border border-[#FF9F1C] transition-all hover:-translate-y-0.5 text-center"
           >
             Buat OJS
-          </Link>
+          </a>
         </div>
 
       </div>
@@ -71,9 +72,12 @@ export default function HeroSection() {
 
             {/* GAMBAR ORANG */}
             <div className="absolute bottom-0 w-[105vw] sm:w-[500px] md:w-[600px] max-w-[600px] z-20 pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-              <img 
+              <Image 
                 src="https://ik.imagekit.io/yqhp1cmbp/image1114.webp" 
                 alt="Web Dev Expert" 
+                width={600}
+                height={600}
+                priority
                 className="w-full h-auto object-contain object-bottom"
               />
             </div>
@@ -112,9 +116,11 @@ export default function HeroSection() {
           <div className="absolute right-[-2%] sm:right-[2%] lg:right-[10%] top-[-2%] md:top-[15%] w-[240px] scale-[0.65] sm:scale-90 md:scale-100 origin-top-right md:origin-right bg-white/80 backdrop-blur-xl border border-[#0A192F]/10 rounded-none p-4 shadow-[20px_20px_0px_-5px_rgba(10,25,47,0.05)] z-30 animate-float-2">
             <div className="flex flex-col gap-3">
               <div className="h-20 rounded-none bg-white border border-[#BAE6FD]/50 flex items-center justify-center relative overflow-hidden">
-                <img 
+                <Image 
                   src="https://ik.imagekit.io/yqhp1cmbp/sinta%20(1).png" 
                   alt="SINTA Logo" 
+                  width={100}
+                  height={48}
                   className="h-12 w-auto object-contain relative z-10"
                 />
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#0A192F 2px, transparent 2px)', backgroundSize: '12px 12px' }} />

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 export interface NavItem {
@@ -11,6 +12,7 @@ export interface NavItem {
 
 interface NavbarProps {
   navItems?: NavItem[];
+  contactWaMessage?: string;
 }
 
 const defaultNavItems: NavItem[] = [
@@ -22,7 +24,10 @@ const defaultNavItems: NavItem[] = [
 
 const hoverColors = ['bg-[#D1F4E0]', 'bg-[#D0E5FF]', 'bg-[#FDE2E4]', 'bg-[#EBFDCC]', 'bg-[#FFE8CC]'];
 
-export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
+export default function Navbar({ 
+  navItems = defaultNavItems,
+  contactWaMessage = "Halo NusaEducation, saya tertarik untuk berdiskusi mengenai layanan yang ditawarkan. Bisakah kita menjadwalkan konsultasi?"
+}: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
 
@@ -41,7 +46,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
       <div className="w-full px-4 md:px-6 flex h-20 items-center justify-between bg-white relative z-50">
         {/* Left: Logo */}
         <Link href="/" className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:opacity-80">
-          <img src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" className="h-10 md:h-14 w-auto object-contain" />
+          <Image src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" width={200} height={56} className="h-10 md:h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Center: Links */}
@@ -123,7 +128,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
                 </Link>
 
                 {/* Card 3 */}
-                <Link href="#contact" className="flex flex-col bg-white hover:bg-slate-50 transition-all duration-300 group">
+                <Link href="/services/digital-marketing" className="flex flex-col bg-white hover:bg-slate-50 transition-all duration-300 group">
                    {/* Top Graphic */}
                    <div className="w-full h-[140px] bg-[#D0E5FF] group-hover:bg-[#9ECAFF] transition-colors relative border-b-2 border-transparent flex items-center justify-center overflow-hidden"
                       style={{ backgroundImage: 'linear-gradient(to right, rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(59, 130, 246, 0.3) 1px, transparent 1px)', backgroundSize: '10px 10px' }}>
@@ -161,17 +166,17 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
 
         {/* Right: Desktop Buttons */}
         <div className="hidden items-center gap-6 md:flex">
-          <Link href="#customer-care" className="cursor-pointer items-center text-[15px] font-medium text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
+          <Link href="/customer-care" className="cursor-pointer items-center text-[15px] font-medium text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
             Customer Care
           </Link>
-          <Link href="#kontak" className="flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+          <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
             Contact Us
-          </Link>
+          </a>
         </div>
 
         {/* Right: Mobile Trigger */}
         <div className="flex md:hidden items-center gap-5">
-          <Link href="#customer-care" className="text-[15px] font-medium text-[#0A192F]">Customer Care</Link>
+          <Link href="/customer-care" className="text-[15px] font-medium text-[#0A192F]">Customer Care</Link>
           <button type="button" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-[#0A192F] transition-transform duration-300">
             {isMobileMenuOpen ? (
               <X className="w-7 h-7" strokeWidth={2.5} />
@@ -223,7 +228,7 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
                   <Link href="/services/journal-publication" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] text-[18px] font-medium hover:text-[#FF9F1C] py-2">
                     Publikasi Jurnal
                   </Link>
-                  <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] text-[18px] font-medium hover:text-[#FF9F1C] py-2">
+                  <Link href="/services/digital-marketing" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] text-[18px] font-medium hover:text-[#FF9F1C] py-2">
                     Digital Marketing
                   </Link>
                 </div>
@@ -240,9 +245,9 @@ export default function Navbar({ navItems = defaultNavItems }: NavbarProps) {
 
           {/* Bottom Action Button */}
           <div className="mt-10">
-            <Link href="#kontak" onClick={() => setIsMobileMenuOpen(false)} className="flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+            <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
         </div>

@@ -19,9 +19,9 @@ export default function Services() {
           <p className="text-base md:text-[16px] text-slate-800 font-normal leading-relaxed max-w-3xl">
             Nusa Education adalah partner strategis yang dibangun untuk tim akademik dan institusi modern. Dengan pendekatan <i>end-to-end</i> yang tersistem—kami mengubah visi inovatif Anda menjadi realita, memperkuat jejak digital, dan mendorong pertumbuhan yang terukur di setiap skala.
           </p>
-          <Link href="#contact" className="mt-8 bg-[#0A192F] text-white px-8 py-3.5 font-semibold text-[16px] hover:bg-[#112a4f] transition-colors tracking-wide">
-            Konsultasi Layanan
-          </Link>
+          <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="mt-8 bg-[#0A192F] text-white px-8 py-3.5 font-semibold text-[16px] hover:bg-[#112a4f] transition-colors tracking-wide inline-block">
+            Hubungi Kami Sekarang
+          </a>
         </div>
 
         {/* Cards Grid */}

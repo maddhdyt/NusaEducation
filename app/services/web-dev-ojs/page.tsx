@@ -24,8 +24,11 @@ const ojsNavItems = [
 export default function WebDevOjsPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans selection:bg-[#1A3263]/20 selection:text-[#1A3263]">
-      <Navbar navItems={ojsNavItems} />
-      
+      <Navbar
+        navItems={ojsNavItems}
+        contactWaMessage="Halo NusaEducation, saya berencana mengembangkan Website Kampus / OJS. Bisa bantu jadwalkan konsultasi?"
+      />
+
       <main>
         {/* Canvas Kosong untuk setiap Section */}
         <HeroSection />
@@ -35,11 +38,12 @@ export default function WebDevOjsPage() {
         <PortfolioSection />
         <PricingSection />
         <FAQSection />
-        
-        <CTA 
-          title="Siap Mengelola Jurnal OJS yang Profesional?" 
-          description="Tinggalkan kendala teknis dan fokus pada substansi jurnal Anda. Kami siap membantu instalasi, kustomisasi, hingga pemeliharaan." 
+
+        <CTA
+          title="Siap Mengelola Jurnal OJS yang Profesional?"
+          description="Tinggalkan kendala teknis dan fokus pada substansi jurnal Anda. Kami siap membantu instalasi, kustomisasi, hingga pemeliharaan."
           buttonText="Konsultasi Gratis"
+          buttonLink="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Web%20Dev%20dan%20OJS%20untuk%20institusi%20saya."
         />
       </main>
 

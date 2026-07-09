@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 function GridCell() {
   const [isHovered, setIsHovered] = useState(false);
@@ -101,7 +102,7 @@ export default function HeroSection() {
             <a href="#pricing" className="border border-[#0A192F] bg-transparent text-[#0A192F] px-8 py-3 font-semibold text-[16px] hover:bg-[#0A192F] hover:text-white transition-colors text-center min-w-[180px]">
               Lihat Paket Harga
             </a>
-            <a href="#konsultasi" className="bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
+            <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20pendampingan%20untuk%20mempublikasikan%20naskah%20jurnal%20saya.%20Bisa%20berikan%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" className="bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
               Konsultasi Gratis
             </a>
           </div>
@@ -179,9 +180,12 @@ export default function HeroSection() {
             {/* 6. Main Photo Frame Placeholder */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[560px] bg-white border border-[#E71D36]/40">
               {/* User provided hero image */}
-              <img
+              <Image
                 src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(2).png"
                 alt="Hero Image Nusa Education"
+                width={560}
+                height={560}
+                priority
                 className="w-full h-auto block"
               />
             </div>
@@ -193,7 +197,7 @@ export default function HeroSection() {
               {/* Avatar + Label */}
               <div className="absolute -top-14 left-[75%] -translate-x-1/2">
                 <div className="w-14 h-14 rounded-full overflow-hidden bg-[#E6007E] z-10 relative flex items-center justify-center shadow-sm">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20(1).png" className="w-full h-full object-cover" alt="Avatar Dosen" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/dosen%20(1).png" width={56} height={56} className="w-full h-full object-cover" alt="Avatar Dosen" priority />
                 </div>
                 <div className="absolute -bottom-2 left-1/2 translate-x-1 bg-[#e39bc3] px-1 text-[16px] font-sans font-bold text-[#0A192F] whitespace-nowrap z-20 shadow-sm">
                   Dosen
@@ -218,7 +222,7 @@ export default function HeroSection() {
               {/* Avatar + Label */}
               <div className="absolute -bottom-7 left-[25%] -translate-x-1/2">
                 <div className="w-14 h-14 rounded-full overflow-hidden bg-[#1E9900] z-10 relative flex items-center justify-center shadow-sm">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(2).png" className="w-full h-full object-cover" alt="Avatar Mahasiswa" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(2).png" width={56} height={56} className="w-full h-full object-cover" alt="Avatar Mahasiswa" priority />
                 </div>
                 <div className="absolute -bottom-2 left-1/2 translate-x-2 bg-[#bcf8ad] px-1 text-[16px] font-sans font-bold text-[#0A192F] whitespace-nowrap z-20 shadow-sm">
                   Mahasiswa

@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const gridStyle = {
@@ -70,7 +72,7 @@ export default function Footer() {
                 <li><Link href="#portofolio" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Portofolio Klien</Link></li>
                 <li><Link href="#testimoni" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Testimoni</Link></li>
                 <li><Link href="#faq" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">FAQ & Bantuan</Link></li>
-                <li><Link href="#" className="text-[#A1A1AA] hover:text-white text-[15px] transition-colors">Karir</Link></li>
+                <li><Link href="/customer-care" className="text-[#A1A1AA] hover:text-white transition-colors text-[15px]">Customer Care</Link></li>
               </ul>
             </div>
           </div>
@@ -91,12 +93,12 @@ export default function Footer() {
 
               {/* Action Buttons */}
               <div className="flex flex-col gap-3">
-                <Link href="#kontak" className="w-full bg-[#FF9F1C] hover:bg-[#E68A00] text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors">
+                <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20untuk%20berdiskusi%20mengenai%20layanan%20yang%20ditawarkan.%20Bisakah%20kita%20menjadwalkan%20konsultasi%3F" target="_blank" rel="noopener noreferrer" className="w-full bg-[#FF9F1C] hover:bg-[#E68A00] text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors block">
                   Contact Us
-                </Link>
-                <Link href="#customer-care" className="w-full bg-transparent border border-[#333] hover:border-white text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors">
+                </a>
+                <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20bantuan%20layanan%20pelanggan%20(Customer%20Care)." target="_blank" rel="noopener noreferrer" className="w-full bg-transparent border border-[#333] hover:border-white text-white font-semibold text-[15px] py-3 px-6 text-center transition-colors block">
                   Customer Care
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -109,9 +111,11 @@ export default function Footer() {
           {/* Giant Logo */}
           <div>
             <Link href="/" className="inline-block transition-opacity hover:opacity-80">
-              <img 
+              <Image 
                 src="https://ik.imagekit.io/yqhp1cmbp/Mask%20group%20(2).png" 
                 alt="Nusa Education Logo" 
+                width={200}
+                height={64}
                 className="h-12 md:h-16 w-auto object-contain opacity-90 mix-blend-screen"
               />
             </Link>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowRight as ArrowRightSmall } from "lucide-react";
 import Link from "next/link";
 
@@ -158,10 +159,13 @@ export default function Portfolio() {
 
                 {/* Top Block (Image) - No colorful overlay */}
                 <div className="w-full aspect-[16/10] relative overflow-hidden bg-slate-100">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 340px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 

@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, Variants, useMotionValue, useTransform, animate } from "framer-motion";
 import Link from "next/link";
 
@@ -357,9 +358,9 @@ export default function Hero() {
           <Link href="#layanan" className="text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center gap-2 px-5 py-3 sm:px-7 md:py-3 font-semibold text-[#0A192F] border border-[#0A192F] bg-transparent hover:bg-slate-50 transition-colors min-w-[140px]">
             Explore ↓
           </Link>
-          <Link href="#" className="text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
+          <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
             Start Now
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -442,7 +443,7 @@ export default function Hero() {
               </div>
 
               {/* Main Person Image */}
-              <img src={activeSlide.image} alt="Creative Digital Partner" className="absolute bottom-0 left-1/2 -translate-x-1/2 md:-translate-x-1/2 z-20 h-full md:h-full w-auto object-contain object-bottom drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] transition-transform duration-700 ease-out pointer-events-none" />
+              <Image src={activeSlide.image} alt="Creative Digital Partner" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="object-contain object-bottom drop-shadow-[0_20px_20px_rgba(0,0,0,0.15)] transition-transform duration-700 ease-out pointer-events-none" />
             </div>
           </motion.div>
         </AnimatePresence>
@@ -482,9 +483,12 @@ export default function Hero() {
                 ].map((logo, idx) => (
                   <div key={idx} className="relative group flex items-center justify-center">
                     {/* The Logo */}
-                    <img
+                    <Image
                       src={logo}
                       alt="Client Logo"
+                      width={120}
+                      height={48}
+                      loading="lazy"
                       className="h-10 md:h-12 w-auto object-contain mx-8 md:mx-12 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 ease-out cursor-pointer drop-shadow-[0_0_0px_rgba(255,159,28,0)] group-hover:drop-shadow-[0_0_10px_rgba(255,159,28,0.8)]"
                     />
                   </div>

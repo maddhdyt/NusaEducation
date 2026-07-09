@@ -1,23 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-
-function GridCell() {
-  const [isHovered, setIsHovered] = useState(false);
-  return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        width: '24px',
-        height: '18px',
-        backgroundColor: '#FFFFFF', // Light up to pure white
-        opacity: isHovered ? 1 : 0,
-        transition: isHovered ? 'opacity 0s' : 'opacity 0.8s ease-out',
-      }}
-      className="box-border shrink-0 cursor-default border-[0.5px] border-transparent"
-    />
-  );
-}
+import Image from 'next/image';
 
 function InteractiveGridBackground() {
   const cols = 90;
@@ -26,15 +9,29 @@ function InteractiveGridBackground() {
 
   return (
     <div className="absolute inset-0 z-0 bg-white pointer-events-auto">
+      <style dangerouslySetInnerHTML={{__html: `
+        .interactive-grid-cell {
+          width: 24px;
+          height: 18px;
+          background-color: #FFFFFF;
+          opacity: 0;
+          transition: opacity 0.8s ease-out;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          border: 0.5px solid transparent;
+        }
+        .interactive-grid-cell:hover {
+          opacity: 1;
+          transition: opacity 0s;
+        }
+      `}} />
       <div
         className="w-full h-full relative overflow-hidden bg-blue-50"
         style={{
-          // Fade out the grid at the top and bottom so it blends seamlessly
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent)',
           maskImage: 'linear-gradient(to bottom, transparent, black 150px, black calc(100% - 150px), transparent)'
         }}
       >
-        {/* Grid Lines Overlay */}
         <div
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
@@ -43,10 +40,9 @@ function InteractiveGridBackground() {
           }}
         ></div>
 
-        {/* Hover Cells Area */}
         <div className="absolute inset-0 z-20 flex flex-wrap" style={{ alignContent: 'flex-start', width: '2160px' }}>
           {squares.map((sq) => (
-            <GridCell key={sq} />
+            <div key={sq} className="interactive-grid-cell" />
           ))}
         </div>
       </div>
@@ -144,8 +140,8 @@ export default function PricingSection() {
               {/* Top Row: Title + Logo */}
               <div className="flex flex-row items-center justify-between mb-5 gap-3">
                 <h3 className="text-[22px] lg:text-[24px] xl:text-[26px] font-serif text-[#0A192F] font-normal tracking-tight leading-[1.1]" style={{ WebkitTextStroke: "0.7px currentColor" }}>{pkg.name}</h3>
-                <div className="h-10 lg:h-14 flex shrink-0 items-center justify-end">
-                  <img src={pkg.logo} alt="Journal Logo" className="h-full w-auto object-contain max-w-[110px] xl:max-w-[130px]" />
+                <div className="h-10 lg:h-14 flex shrink-0 items-center justify-end relative">
+                  <Image src={pkg.logo} alt="Journal Logo" width={130} height={56} className="h-full w-auto object-contain max-w-[110px] xl:max-w-[130px]" />
                 </div>
               </div>
 
@@ -156,9 +152,13 @@ export default function PricingSection() {
               <p className="text-[14px] lg:text-[15px] text-[#0A192F] font-sans font-medium leading-relaxed mb-6">{pkg.desc}</p>
 
               {/* CTA Button */}
-              <button className="self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]">
+              <a 
+                href={`https://wa.me/6285121117589?text=${encodeURIComponent(`Halo NusaEducation, saya tertarik dengan paket pendampingan jurnal: ${pkg.name}. Bisakah kita berdiskusi lebih lanjut?`)}`}
+                target="_blank" rel="noopener noreferrer"
+                className="self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]"
+              >
                 Contact Sales
-              </button>
+              </a>
 
               {/* Includes Header */}
               <div className="text-[14px] text-[#0A192F] font-medium mb-4">Plan includes:</div>

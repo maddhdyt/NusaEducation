@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function IndexingSection() {
   return (
@@ -26,33 +27,33 @@ export default function IndexingSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-5 w-full max-w-[1000px]">
           
           {/* Scopus (Large Block) */}
-          <div className="col-span-2 md:col-span-2 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/scopus.png" alt="Scopus" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-2 md:col-span-2 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/scopus.png" alt="Scopus" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
           </div>
           
           {/* Sinta */}
-          <div className="col-span-1 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/sinta.png" alt="Sinta" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-1 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/sinta.png" alt="Sinta" fill loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
           </div>
           
           {/* DOAJ */}
-          <div className="col-span-1 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/doaj.png" alt="DOAJ" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-1 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/doaj.png" alt="DOAJ" fill loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
           </div>
           
           {/* Web of Science */}
-          <div className="col-span-2 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/wos.png" alt="Web of Science" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-2 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/wos.png" alt="Web of Science" fill loading="lazy" sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
           </div>
 
           {/* Index Copernicus (Wide Block) */}
-          <div className="col-span-2 md:col-span-2 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/copernicus.png" alt="Index Copernicus" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-2 md:col-span-2 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/copernicus.png" alt="Index Copernicus" fill loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
           </div>
 
           {/* Google Scholar */}
-          <div className="col-span-2 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
-            <img src="https://ik.imagekit.io/yqhp1cmbp/google%20scholar.png" alt="Google Scholar" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden col-span-2 md:col-span-1 h-[160px] md:h-[220px] transition-transform hover:-translate-y-2 duration-300">
+            <Image src="https://ik.imagekit.io/yqhp1cmbp/google%20scholar.png" alt="Google Scholar" fill loading="lazy" sizes="(max-width: 768px) 100vw, 25vw" className="object-cover" />
           </div>
 
         </div>

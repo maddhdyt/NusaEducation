@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import Image from 'next/image';
 
 export default function TargetAudienceSection() {
   /**
@@ -108,7 +110,7 @@ export default function TargetAudienceSection() {
               {/* 1. Kampus & PT (RED/ORANGE) */}
               <div className="absolute top-[25%] md:top-[35%] left-[18%] md:left-[25%] z-30 pointer-events-auto">
                 <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#FF4D2D] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Kampus & PT" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/akademisi.png" alt="Kampus & PT" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-orange-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-orange-200">
                     Kampus & PT
                   </div>
@@ -123,7 +125,7 @@ export default function TargetAudienceSection() {
               {/* 2. Lembaga Riset (GREEN) */}
               <div className="absolute top-[15%] md:top-[15%] left-[58%] md:left-[50%] z-30 pointer-events-auto">
                 <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Lembaga Riset" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/guru.png" alt="Lembaga Riset" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-lime-200">
                     Lembaga Riset
                   </div>
@@ -138,7 +140,7 @@ export default function TargetAudienceSection() {
               {/* 3. Editor Jurnal (PINK) */}
               <div className="absolute top-[65%] md:top-[63%] left-[22%] md:left-[32%] z-30 pointer-events-auto">
                 <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#FF2E93] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Editor Jurnal" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/dosen%20akademik.png" alt="Editor Jurnal" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-pink-200">
                     Editor Jurnal
                   </div>
@@ -153,7 +155,7 @@ export default function TargetAudienceSection() {
               {/* 4. Penerbit Akademik (BLUE) */}
               <div className="absolute top-[55%] md:top-[45%] left-[62%] md:left-[57%] z-30 pointer-events-auto">
                 <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
-                  <img src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Penerbit Akademik" className="w-full h-full object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Penerbit Akademik" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-blue-200">
                     Penerbit Akademik
                   </div>
