@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -117,6 +117,7 @@ export default function Footer() {
                 width={200}
                 height={64}
                 className="h-12 md:h-16 w-auto object-contain opacity-90 mix-blend-screen"
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
           </div>

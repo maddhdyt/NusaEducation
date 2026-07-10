@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="w-full bg-white font-sans overflow-visible py-20">
+    <section id="keunggulan" className="w-full bg-white font-sans overflow-visible py-20">
       <div className="max-w-[1380px] mx-auto px-6 md:px-10 relative">
 
         {/* Absolute Vertical Grid Lines (Full Height of right column) */}

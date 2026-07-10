@@ -43,9 +43,9 @@ export default function HeroSection() {
       {/* PREMIUM GRAPHIC AREA */}
       <div className="w-full mx-auto mt-10 md:mt-16 relative h-[420px] sm:h-[500px] md:h-[650px] flex items-center justify-center z-10">
         
-        {/* Massive Geometric SVG (Grid Bleeding Effect) */}
-        <div className="absolute top-0 bottom-[-50px] left-[-20%] w-[140%] pointer-events-none opacity-5 flex items-center justify-center">
-           <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(90deg, #0A192F 1.5px, transparent 1.5px), linear-gradient(#0A192F 1.5px, transparent 1.5px)', backgroundSize: '30px 30px' }} />
+        {/* Premium Dot Matrix Background */}
+        <div className="absolute top-0 bottom-[-50px] left-[-20%] w-[140%] pointer-events-none opacity-[0.07] flex items-center justify-center">
+           <div className="w-full h-full" style={{ backgroundImage: 'radial-gradient(#0A192F 1.5px, transparent 1.5px)', backgroundSize: '32px 32px' }} />
         </div>
 
         {/* Central Composition */}
@@ -79,6 +79,7 @@ export default function HeroSection() {
                 height={600}
                 priority
                 className="w-full h-auto object-contain object-bottom"
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
           </div>
@@ -122,6 +123,7 @@ export default function HeroSection() {
                   width={100}
                   height={48}
                   className="h-12 w-auto object-contain relative z-10"
+                  style={{ width: "auto", height: "auto" }}
                 />
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#0A192F 2px, transparent 2px)', backgroundSize: '12px 12px' }} />
               </div>
@@ -154,6 +156,29 @@ export default function HeroSection() {
             </div>
           </div>
 
+          {/* FLOATING WIDGET 4: Server Stabil */}
+          <div className="absolute left-[-2%] sm:left-[2%] lg:left-[6%] bottom-[8%] md:bottom-[15%] w-[230px] scale-[0.65] sm:scale-90 md:scale-100 origin-bottom-left md:origin-left bg-white/80 backdrop-blur-xl border border-[#0A192F]/10 rounded-none p-4 shadow-[20px_20px_0px_-5px_rgba(10,25,47,0.05)] z-30 animate-float-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-none bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-bold text-[13px] text-[#0A192F]">Cloud Server OJS</h4>
+                <p className="text-[10px] font-bold text-emerald-600 tracking-wider">UPTIME 99.9%</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-2 px-2.5 py-1.5 bg-emerald-50 border border-emerald-100">
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-none bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-none h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wide">Systems Online</span>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -171,9 +196,14 @@ export default function HeroSection() {
           0%, 100% { transform: translateY(0px) rotate(-4deg); }
           50% { transform: translateY(-10px) rotate(-6deg); }
         }
+        @keyframes float-delay {
+          0%, 100% { transform: translateY(0px) rotate(3deg); }
+          50% { transform: translateY(-14px) rotate(1deg); }
+        }
         .animate-float-1 { animation: float-slow 5s ease-in-out infinite; }
         .animate-float-2 { animation: float-med 6s ease-in-out infinite; }
         .animate-float-3 { animation: float-fast 4.5s ease-in-out infinite; }
+        .animate-float-4 { animation: float-delay 5.5s ease-in-out infinite; }
       `}} />
     </section>
   );

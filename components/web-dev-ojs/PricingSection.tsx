@@ -159,7 +159,7 @@ export default function PricingSection() {
               <div className="flex flex-row items-center justify-between mb-5 gap-3">
                 <h3 className="text-[22px] lg:text-[24px] xl:text-[26px] font-serif text-[#0A192F] font-normal tracking-tight leading-[1.1]" style={{ WebkitTextStroke: "0.7px currentColor" }}>{pkg.name}</h3>
                 <div className="h-10 lg:h-14 flex shrink-0 items-center justify-end relative">
-                  <Image src={pkg.logo} alt="Plan Logo" width={130} height={56} className="h-full w-auto object-contain max-w-[110px] xl:max-w-[130px]" />
+                  <Image src={pkg.logo} alt="Plan Logo" width={130} height={56} className="h-full w-auto object-contain max-w-[110px] xl:max-w-[130px]" style={{ width: "auto", height: "auto" }} />
                 </div>
               </div>
 

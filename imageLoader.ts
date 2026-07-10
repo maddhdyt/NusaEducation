@@ -11,7 +11,7 @@ export default function imageLoader({
 }) {
   if (src.startsWith('https://ik.imagekit.io')) {
     const separator = src.includes('?') ? '&' : '?';
-    return `${src}${separator}tr=w-${width},q-${quality || 75}`;
+    return `${src}${separator}tr=w-${width},q-${quality || 75},f-auto`;
   }
   return src;
 }

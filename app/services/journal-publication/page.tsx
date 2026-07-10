@@ -18,6 +18,11 @@ const journalNavItems = [
   { label: 'FAQ', href: '#faq' },
 ];
 
+export const metadata = {
+  title: "Publikasi Jurnal | Nusa Education",
+  description: "Layanan Publikasi Jurnal dari Nusa Education. Tingkatkan visibilitas akademik Anda bersama tim profesional.",
+};
+
 export default function JournalPublicationPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans selection:bg-[#1A3263]/20 selection:text-[#1A3263]">

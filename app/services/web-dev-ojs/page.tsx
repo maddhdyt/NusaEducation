@@ -21,6 +21,11 @@ const ojsNavItems = [
   { label: 'FAQ', href: '#faq' },
 ];
 
+export const metadata = {
+  title: "Web Dev & OJS | Nusa Education",
+  description: "Layanan Web Dev dan OJS dari Nusa Education. Tinggalkan kendala teknis dan fokus pada substansi jurnal Anda.",
+};
+
 export default function WebDevOjsPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans selection:bg-[#1A3263]/20 selection:text-[#1A3263]">

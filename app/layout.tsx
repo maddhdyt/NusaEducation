@@ -26,8 +26,24 @@ const featureFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Nusa Agency | Creative Digital Partner",
-  description: "Nusa Agency membantu bisnis, lembaga, dan komunitas tumbuh melalui teknologi, desain, dan strategi digital yang relevan.",
+  title: "Nusa Education | Creative Digital Partner",
+  description: "Nusa Education membantu bisnis, lembaga, dan komunitas tumbuh melalui teknologi, desain, dan strategi digital yang relevan.",
+  openGraph: {
+    title: "Nusa Education | Creative Digital Partner",
+    description: "Nusa Education membantu bisnis, lembaga, dan komunitas tumbuh melalui teknologi, desain, dan strategi digital yang relevan.",
+    url: "https://nusaeducation.com",
+    siteName: "Nusa Education",
+    images: [
+      {
+        url: "https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png",
+        width: 1200,
+        height: 630,
+        alt: "Nusa Education Thumbnail",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
   formatDetection: {
     telephone: false,
   },
@@ -39,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body suppressHydrationWarning className={`${geist.variable} ${featureFont.variable} font-sans antialiased`}>
         <CustomCursor />
         {children}

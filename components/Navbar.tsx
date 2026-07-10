@@ -46,16 +46,16 @@ export default function Navbar({
       <div className="w-full px-4 md:px-6 flex h-20 items-center justify-between bg-white relative z-50">
         {/* Left: Logo */}
         <Link href="/" className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:opacity-80">
-          <Image src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" width={200} height={56} className="h-10 md:h-14 w-auto object-contain" priority />
+          <Image src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" width={200} height={56} className="h-10 md:h-14 w-auto object-contain" style={{ width: "auto", height: "auto" }} priority />
         </Link>
 
         {/* Center: Links */}
         <nav className="hidden items-center gap-1 md:flex">
           <div className="relative group py-4">
-            <button className="relative group/nav px-2.5 py-2 overflow-hidden flex items-center gap-1 cursor-pointer">
+            <Link href="/#layanan" className="relative group/nav px-2.5 py-2 overflow-hidden flex items-center gap-1 cursor-pointer">
               <div className="absolute inset-0 bg-[#FFE8CC] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-0"></div>
               <span className="relative z-10 text-[15px] text-[#0A192F] font-medium transition-colors flex items-center gap-1">Layanan Kami <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" /></span>
-            </button>
+            </Link>
             <div className="absolute top-[80%] left-1/2 -translate-x-1/3 w-[750px] bg-white border border-slate-200 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 p-6 z-50">
               <div className="grid grid-cols-3 gap-6">
                 
@@ -222,6 +222,9 @@ export default function Navbar({
                 }}
               >
                 <div className="flex flex-col gap-4">
+                  <Link href="/#layanan" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] text-[18px] font-bold hover:text-[#FF9F1C] py-2 border-b border-slate-100 mb-1">
+                    Ringkasan Layanan Kami
+                  </Link>
                   <Link href="/services/web-dev-ojs" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] text-[18px] font-medium hover:text-[#FF9F1C] py-2">
                     Web Dev & OJS
                   </Link>

@@ -17,6 +17,11 @@ const digitalMarketingNavItems = [
   { label: 'FAQ', href: '#faq' },
 ];
 
+export const metadata = {
+  title: "Digital Marketing | Nusa Education",
+  description: "Layanan Digital Marketing dari Nusa Education. Ubah pengunjung menjadi pelanggan setia.",
+};
+
 export default function DigitalMarketingPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] font-sans selection:bg-[#FF9F1C]/20 selection:text-[#0A192F]">

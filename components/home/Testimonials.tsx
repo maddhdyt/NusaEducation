@@ -1,107 +1,132 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 
-// Mock data: Transaction proofs
-const allProofs = [
-  { id: "NS-8921-A", date: "22/06/2026", impact: "TRANSFER: RP 125.000.000", client: "UNIV. BRAWIJAYA", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=600&auto=format&fit=crop" },
-  { id: "NS-8922-B", date: "20/06/2026", impact: "KONTRAK OJS TERTANDA", client: "INSTITUT TEKNOLOGI X", image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&auto=format&fit=crop" },
-  { id: "NS-8923-C", date: "15/06/2026", impact: "INVOICE LUNAS", client: "POLITEKNIK NEGERI Y", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop" },
-  { id: "NS-8924-D", date: "10/06/2026", impact: "DEPLOYMENT SELESAI", client: "KAMPUS DIGITAL Z", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" },
-  { id: "NS-8925-E", date: "05/06/2026", impact: "RETAINER FEE: RP 45JT", client: "AKADEMI KESEHATAN", image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=600&auto=format&fit=crop" },
-  { id: "TX-4410-X", date: "01/06/2026", impact: "PEMBAYARAN DITERIMA", client: "SEKOLAH TINGGI ILMU B", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=600&auto=format&fit=crop" },
-  { id: "TX-4411-Y", date: "28/05/2026", impact: "PROJECT HANDOVER", client: "UNIVERSITAS SWASTA", image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30f?q=80&w=600&auto=format&fit=crop" },
-  { id: "TX-4412-Z", date: "25/05/2026", impact: "MAINTENANCE LUNAS", client: "YAYASAN PENDIDIKAN", image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=600&auto=format&fit=crop" },
-  { id: "TX-4413-W", date: "20/05/2026", impact: "SERVER UPGRADE APPROVED", client: "KAMPUS INTERNASIONAL", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" },
-  { id: "TX-4414-V", date: "15/05/2026", impact: "INVOICE #992 PAID", client: "INSTITUT SAINS TERAPAN", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" },
+const stories = [
+  { 
+    client: "Universitas Brawijaya", 
+    person: "Prof. Dr. Hendra Gunawan",
+    role: "Wakil Rektor I",
+    story: "NusaEducation membantu kami merevolusi sistem pendaftaran mahasiswa baru. Proses yang tadinya memakan waktu berminggu-minggu kini selesai dalam hitungan hari. Platform yang disediakan sangat stabil.",
+    metricValue: "1 Hari",
+    metricDesc: "vs. berminggu-minggu untuk proses pendaftaran awal",
+    darkColor: "bg-[#F47C68]", // Darker Coral
+    lightColor: "bg-[#FFBCAE]" // Lighter Coral
+  },
+  { 
+    client: "Institut Teknologi Sepuluh Nopember", 
+    person: "Dr. Budi Santoso",
+    role: "Kepala LPPM",
+    story: "Kami berhasil meningkatkan jumlah publikasi jurnal bereputasi dengan platform OJS yang dirancang khusus oleh Nusa. Sangat intuitif, aman, dan langsung memenuhi standar pedoman akreditasi.",
+    metricValue: "3x",
+    metricDesc: "Peningkatan jumlah publikasi terindeks per tahun",
+    darkColor: "bg-[#9AC2F4]", // Darker Blue
+    lightColor: "bg-[#D4E4FF]" // Lighter Blue
+  },
+  { 
+    client: "Politeknik Negeri Malang", 
+    person: "Rina Mulyani, M.T.",
+    role: "Direktur Admisi",
+    story: "Kampanye digital marketing yang dijalankan tim Nusa memberikan dampak luar biasa pada konversi mahasiswa baru. Target penerimaan tercapai bahkan sebelum gelombang pendaftaran terakhir ditutup.",
+    metricValue: "37.5%",
+    metricDesc: "Peningkatan rasio pendaftaran mahasiswa baru YoY",
+    darkColor: "bg-[#7BEB9C]", // Darker Green
+    lightColor: "bg-[#B5F5C6]" // Lighter Green
+  },
+  { 
+    client: "Universitas Telkom", 
+    person: "Ir. Dimas Anggara",
+    role: "Direktur TIK",
+    story: "Migrasi sistem akademik warisan (legacy) kami berjalan tanpa hambatan. Tim teknis sangat responsif, mengawal proses end-to-end, dan memahami betul kompleksitas pendidikan tinggi.",
+    metricValue: "10k+",
+    metricDesc: "Jam kerja admin yang dihemat secara otomatis",
+    darkColor: "bg-[#FFBE68]", // Darker Orange
+    lightColor: "bg-[#FFE4B5]" // Lighter Orange
+  },
+  { 
+    client: "Akademi Keperawatan Pelni", 
+    person: "Drg. Siti Aisyah",
+    role: "Ketua Senat Akademik",
+    story: "Pendampingan akreditasi jurnal kami sangat terbantu dengan sistem yang terintegrasi. NusaEducation tidak hanya sekadar vendor IT, tapi partner ahli yang peduli pada ekosistem riset.",
+    metricValue: "3 Bln",
+    metricDesc: "Lebih cepat dari target rilis jurnal dan akreditasi",
+    darkColor: "bg-[#D9D9D9]", // Darker Gray
+    lightColor: "bg-[#F4F4F5]" // Lighter Gray
+  },
+  { 
+    client: "STIE YKPN", 
+    person: "Ahmad Reza, M.B.A.",
+    role: "Kepala Divisi Marketing",
+    story: "Dengan Nusa, kami bisa mempertahankan skala promosi sambil bermitra erat dengan tim sales untuk memperdalam koneksi dengan audiens mahasiswa, serta meletakkan fondasi masa depan digital.",
+    metricValue: "9x",
+    metricDesc: "Pertumbuhan traffic website organik",
+    darkColor: "bg-[#3A9EF2]", // Darker Bright Blue
+    lightColor: "bg-[#8BC6F7]" // Lighter Bright Blue
+  }
 ];
-
-// The Soft Digital Receipt Card
-const ReceiptCard = ({ data }: { data: { id: string, date: string, impact: string, client: string, image: string } }) => (
-  <div className="w-[280px] md:w-[320px] shrink-0 bg-slate-50 border border-slate-200 flex flex-col p-4 md:p-5 font-mono relative group hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:border-slate-300 transition-all duration-300">
-
-    <div className="flex flex-col flex-1 h-full">
-      <div className="mb-4">
-        <h4 className="text-[18px] md:text-[20px] font-serif text-[#0A192F] tracking-tight leading-snug mb-1 font-bold">
-          {data.impact}
-        </h4>
-        <p className="text-[10px] md:text-[11px] uppercase tracking-widest text-slate-500 font-bold">
-          KLIEN: <span className="text-[#FF9F1C]">{data.client}</span>
-        </p>
-      </div>
-
-      {/* The Screenshot Thumbnail */}
-      <div className="relative w-full aspect-[9/16] border border-slate-200 bg-white overflow-hidden mt-auto shadow-sm">
-        <Image
-          src={data.image}
-          alt="Proof"
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 300px, 320px"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-        />
-      </div>
-    </div>
-
-  </div>
-);
 
 export default function Testimonials() {
   return (
-    <section id="testimoni" className="w-full bg-white py-20 font-sans overflow-hidden relative">
-
-      {/* CSS for Infinite Marquee */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes marquee-reverse {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0%); }
-        }
-        .animate-marquee {
-          display: flex;
-          width: max-content;
-          animation: marquee 35s linear infinite;
-        }
-        .animate-marquee-reverse {
-          display: flex;
-          width: max-content;
-          animation: marquee-reverse 40s linear infinite;
-        }
-        .animate-marquee:hover, .animate-marquee-reverse:hover {
-          animation-play-state: paused;
-        }
-      `}} />
-
+    <section id="testimoni" className="w-full bg-[#F8F9FA] py-20 md:py-32 font-sans relative">
       <div className="max-w-[1380px] mx-auto px-6 md:px-8 relative z-20">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <span className="text-[#FF9F1C] font-bold tracking-widest uppercase text-sm mb-3 md:mb-4">Testimonial</span>
-          <h2 className="text-[32px] md:text-[54px] font-serif font-medium text-[#0A192F] leading-[1.1] mb-4 md:mb-6 tracking-tight" style={{ WebkitTextStroke: "1px currentColor" }}>
+        
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <span className="text-[#FF9F1C] font-bold tracking-widest uppercase text-sm mb-3 md:mb-4">Testimonial & Kisah Sukses</span>
+          <h2 className="text-[36px] md:text-[54px] font-serif font-medium text-[#0A192F] leading-[1.1] mb-4 md:mb-6 tracking-tight" style={{ WebkitTextStroke: "1px currentColor" }}>
             Kata Mereka Tentang Kami
           </h2>
-          <p className="text-[#475569] text-[14px] md:text-[16px] leading-relaxed">
-            Kami tidak sekadar berjanji. Berikut adalah tumpukan bukti transaksi dan pencapaian yang telah diverifikasi oleh klien-klien terbaik kami.
+          <p className="text-[#475569] text-[15px] md:text-[17px] leading-relaxed">
+            Kami tidak sekadar berjanji. Berikut adalah kisah sukses dan pencapaian nyata yang telah diraih oleh klien-klien terbaik kami.
           </p>
         </div>
-      </div>
 
-      {/* Single Marquee Row */}
-      <div className="relative w-full overflow-hidden mb-8 md:mb-12 py-4 md:py-10 mt-6 md:mt-0">
-        {/* We duplicate the array to create a seamless infinite loop */}
-        <div className="animate-marquee flex items-center gap-6 md:gap-10 px-3 md:px-5">
-          {[...allProofs, ...allProofs].map((proof, i) => (
-            <ReceiptCard key={i} data={proof} />
+        {/* Stories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {stories.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white flex flex-col group cursor-pointer"
+            >
+              {/* Card Header & Content */}
+              <div className="p-5 flex-1 flex flex-col">
+                
+                {/* Client & Person Details */}
+                <div className="flex flex-col justify-start pb-3 mb-3 border-b border-slate-200">
+                  <h4 className="font-sans font-bold text-slate-800 text-[14px] tracking-tight mb-1">{item.client}</h4>
+                  <p className="font-sans text-[12px] text-slate-500 font-medium leading-snug">
+                    <span className="text-slate-700 font-semibold">{item.person}</span> — {item.role}
+                  </p>
+                </div>
+                
+                {/* Story Text */}
+                <p className="text-slate-600 text-[13px] md:text-[14px] leading-[1.6] font-medium pr-2">
+                  {item.story}
+                </p>
+              </div>
+
+              {/* Card Footer Metric Block (Two-Toned) */}
+              <div className="w-full flex flex-row mt-auto">
+                {/* Left Metric Value (Darker) */}
+                <div className={`px-4 py-4 flex items-center justify-center w-auto min-w-[100px] md:min-w-[110px] shrink-0 ${item.darkColor}`}>
+                  <span className="font-serif font-bold text-[#0A192F] text-[34px] md:text-[38px] leading-none tracking-tight whitespace-nowrap">
+                    {item.metricValue}
+                  </span>
+                </div>
+                
+                {/* Right Metric Desc (Lighter) */}
+                <div className={`px-4 py-4 flex items-center flex-1 ${item.lightColor}`}>
+                  <span className="text-[12px] font-bold text-[#0A192F] leading-snug pr-2">
+                    {item.metricDesc}
+                  </span>
+                </div>
+              </div>
+
+            </div>
           ))}
         </div>
-      </div>
 
-      {/* Left/Right Fade Overlays */}
-      <div className="absolute top-0 left-0 w-16 md:w-40 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-      <div className="absolute top-0 right-0 w-16 md:w-40 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+      </div>
     </section>
   );
 }
