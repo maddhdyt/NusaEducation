@@ -32,7 +32,7 @@ export default function HeroSection() {
           </Link>
           <a 
             href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20berencana%20membuat%20%2F%20mengembangkan%20Website%20Kampus%20%26%20Sistem%20OJS.%20Bisa%20menjadwalkan%20sesi%20konsultasi%3F" target="_blank" rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-3.5 bg-[#FF9F1C] text-white font-semibold tracking-wide text-[15px] hover:bg-[#E68A00] border border-[#FF9F1C] transition-all hover:-translate-y-0.5 text-center"
+            className="conversion [&>*]:pointer-events-none w-full sm:w-auto px-8 py-3.5 bg-[#FF9F1C] text-white font-semibold tracking-wide text-[15px] hover:bg-[#E68A00] border border-[#FF9F1C] transition-all hover:-translate-y-0.5 text-center"
           >
             Buat OJS
           </a>
@@ -55,7 +55,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 z-10 pointer-events-none flex justify-center">
             {/* The Pixelated Geometric Block (Strict stepped edges) */}
             <div 
-              className="absolute bottom-0 w-[90vw] max-w-[480px] h-[350px] sm:h-[450px] md:h-[560px] bg-[#0A192F] z-10 overflow-hidden shadow-[0_0_0_8px_rgba(255,253,249,1)]"
+              className="absolute bottom-0 w-[90vw] max-w-[500px] h-[350px] sm:h-[450px] md:h-[560px] bg-[#0A192F] z-10 overflow-hidden shadow-[0_0_0_8px_rgba(255,253,249,1)]"
               style={{
                 clipPath: 'polygon(0% 30px, 30px 30px, 30px 0%, calc(100% - 30px) 0%, calc(100% - 30px) 30px, 100% 30px, 100% 100%, 0% 100%)'
               }}
@@ -71,9 +71,9 @@ export default function HeroSection() {
             </div>
 
             {/* GAMBAR ORANG */}
-            <div className="absolute bottom-0 w-[105vw] sm:w-[500px] md:w-[600px] max-w-[600px] z-20 pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+            <div className="absolute bottom-0 w-[105vw] sm:w-[500px] md:w-[540px] max-w-[540px] z-20 pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
               <Image 
-                src="https://ik.imagekit.io/yqhp1cmbp/image1114.webp" 
+                src="https://ik.imagekit.io/yqhp1cmbp/person.webp" 
                 alt="Web Dev Expert" 
                 width={600}
                 height={600}
@@ -135,7 +135,7 @@ export default function HeroSection() {
           </div>
 
           {/* FLOATING WIDGET 3: Custom Theme */}
-          <div className="absolute right-[-2%] sm:right-[5%] lg:right-[12%] bottom-[5%] md:bottom-[15%] w-[280px] scale-[0.65] sm:scale-90 md:scale-100 origin-bottom-right md:origin-right bg-white/80 backdrop-blur-xl border border-[#0A192F]/10 rounded-none p-5 shadow-[20px_20px_0px_-5px_rgba(10,25,47,0.05)] z-30 animate-float-3">
+          <div className="absolute right-[-2%] sm:right-[0%] lg:right-[2%] bottom-[5%] md:bottom-[8%] w-[280px] scale-[0.65] sm:scale-90 md:scale-100 origin-bottom-right md:origin-right bg-white/80 backdrop-blur-xl border border-[#0A192F]/10 rounded-none p-5 shadow-[20px_20px_0px_-5px_rgba(10,25,47,0.05)] z-30 animate-float-3">
             <div className="flex items-center gap-3.5 mb-4">
               <div className="w-12 h-12 rounded-none bg-[#FF9F1C] flex items-center justify-center text-white border border-[#FF9F1C]/20">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

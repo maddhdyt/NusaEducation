@@ -57,7 +57,7 @@ export default function ContactChannels() {
               href={chan.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`group flex flex-col p-8 md:p-10 ${chan.bg} ${chan.textColor} transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] border ${chan.bg === 'bg-[#F8F9FA]' ? 'border-slate-200 hover:border-slate-300' : 'border-transparent'}`}
+              className={`conversion [&>*]:pointer-events-none group flex flex-col p-8 md:p-10 ${chan.bg} ${chan.textColor} transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] border ${chan.bg === 'bg-[#F8F9FA]' ? 'border-slate-200 hover:border-slate-300' : 'border-transparent'}`}
             >
               <div className="mb-8">
                 {chan.icon}

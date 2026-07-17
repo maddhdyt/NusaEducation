@@ -92,7 +92,7 @@ const slides = [
     gridLineColor: "#0A192F",
     gridTrailColor: "#FFFFFF",
     maskPath: "M0,600 H1440 V400 H1120 V240 H880 V80 H560 V200 H320 V360 H0 Z",
-    image: "https://ik.imagekit.io/yqhp1cmbp/image1114.webp",
+    image: "https://ik.imagekit.io/yqhp1cmbp/person.webp",
     shapes: (
       <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[900px] h-full z-0 pointer-events-none">
         {/* 4-Point Sparkle Star */}
@@ -355,10 +355,10 @@ export default function Hero() {
 
         {/* Buttons - Side by Side on Mobile */}
         <div className="animate-fade-in-up delay-400 mt-8 flex flex-row items-center justify-center gap-3 md:gap-4 w-full">
-          <Link href="#layanan" className="text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center gap-2 px-5 py-3 sm:px-7 md:py-3 font-semibold text-[#0A192F] border border-[#0A192F] bg-transparent hover:bg-slate-50 transition-colors min-w-[140px]">
+          <Link href="#layanan" className="conversion [&>*]:pointer-events-none text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center gap-2 px-5 py-3 sm:px-7 md:py-3 font-semibold text-[#0A192F] border border-[#0A192F] bg-transparent hover:bg-slate-50 transition-colors min-w-[140px]">
             Explore ↓
           </Link>
-          <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
+          <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
             Start Now
           </a>
         </div>

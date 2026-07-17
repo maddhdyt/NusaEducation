@@ -129,8 +129,8 @@ export default function PricingSection() {
       <div className="relative z-30 w-full max-w-[1380px] mx-auto px-6 flex flex-col items-center pointer-events-none">
 
         <div className="text-center mb-10 pointer-events-none">
-          <h2 className="text-[48px] sm:text-[64px] md:text-[74px] font-serif text-[#0A192F] mb-6 leading-[0.95] max-w-6xl mx-auto" style={{ WebkitTextStroke: "1.2px currentColor" }}>
-            Pilih paket infrastruktur sesuai<br />kebutuhan instansi Anda
+          <h2 className="text-[38px] sm:text-5xl md:text-[78px] font-serif text-[#0A192F] mb-6 leading-[1.05] md:leading-[0.95] max-w-6xl mx-auto" style={{ WebkitTextStroke: "1px currentColor" }}>
+            Pilih paket infrastruktur sesuai<br className="hidden md:block" /> kebutuhan instansi Anda
           </h2>
           <p className="text-[#0A192F] max-w-[500px] mx-auto font-sans font-medium text-[16px] md:text-[18px] leading-snug">
             Sistem transparan tanpa biaya tersembunyi. Konsultasikan kebutuhan web jurnal Anda dengan tim ahli kami.
@@ -170,7 +170,7 @@ export default function PricingSection() {
               <a 
                 href={`https://wa.me/6285121117589?text=${encodeURIComponent(`Halo NusaEducation, saya tertarik dengan paket pengembangan website / OJS: ${pkg.name}. Bisa berikan detail harganya?`)}`}
                 target="_blank" rel="noopener noreferrer"
-                className="self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]"
+                className="conversion [&>*]:pointer-events-none self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]"
               >
                 Contact Sales
               </a>

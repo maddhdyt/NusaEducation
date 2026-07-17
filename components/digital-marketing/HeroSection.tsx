@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex animate-fade-in-up delay-400">
             <a 
               href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20untuk%20meningkatkan%20konversi%20dan%20strategi%20Digital%20Marketing%20institusi%20saya.%20Bisa%20bantu%20jadwalkan%20konsultasi%3F" target="_blank" rel="noopener noreferrer"
-              className="inline-flex px-6 py-3.5 bg-white text-[#040b17] font-bold tracking-wide text-[15px] hover:bg-gray-200 transition-colors"
+              className="conversion [&>*]:pointer-events-none inline-flex px-6 py-3.5 bg-white text-[#040b17] font-bold tracking-wide text-[15px] hover:bg-gray-200 transition-colors"
             >
               Mulai Kampanye
             </a>

@@ -46,7 +46,7 @@ export default function Navbar({
       <div className="w-full px-4 md:px-6 flex h-20 items-center justify-between bg-white relative z-50">
         {/* Left: Logo */}
         <Link href="/" className="flex cursor-pointer items-center transition-all duration-300 ease-in-out hover:opacity-80">
-          <Image src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" width={200} height={56} className="h-10 md:h-14 w-auto object-contain" style={{ width: "auto", height: "auto" }} priority />
+          <Image src="https://ik.imagekit.io/yqhp1cmbp/logo%20nusa%20education.png" alt="Nusa Education" width={200} height={56} className="h-7 md:h-10 lg:h-14 w-auto object-contain" style={{ width: "auto", height: "auto" }} priority />
         </Link>
 
         {/* Center: Links */}
@@ -169,14 +169,13 @@ export default function Navbar({
           <Link href="/customer-care" className="cursor-pointer items-center text-[15px] font-medium text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
             Customer Care
           </Link>
-          <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+          <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
             Contact Us
           </a>
         </div>
 
         {/* Right: Mobile Trigger */}
         <div className="flex md:hidden items-center gap-5">
-          <Link href="/customer-care" className="text-[15px] font-medium text-[#0A192F]">Customer Care</Link>
           <button type="button" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-[#0A192F] transition-transform duration-300">
             {isMobileMenuOpen ? (
               <X className="w-7 h-7" strokeWidth={2.5} />
@@ -244,11 +243,15 @@ export default function Navbar({
                 {item.label}
               </Link>
             ))}
+            
+            <Link href="/customer-care" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-[#0A192F] font-serif text-[32px] font-medium tracking-tight border-b border-slate-100 py-4">
+              Customer Care
+            </Link>
           </div>
 
           {/* Bottom Action Button */}
           <div className="mt-10">
-            <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+            <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="conversion [&>*]:pointer-events-none flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
               Contact Us
             </a>
           </div>

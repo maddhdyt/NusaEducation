@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
 
             {/* Sticky Mockup Window */}
             <div className="pointer-events-auto sticky top-32 w-1/2 pl-8 flex flex-col group hover:-translate-y-2 transition-transform duration-500 pt-8">
-              <div className="w-full aspect-[16/11] bg-[#0A192F] rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-slate-800 overflow-hidden flex flex-col ring-1 ring-white/10">
+              <div className="w-full aspect-16/11 bg-[#0A192F] rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-slate-800 overflow-hidden flex flex-col ring-1 ring-white/10">
 
                 {/* Sleek Dark Browser Top Bar */}
                 <div className="w-full h-10 md:h-12 bg-[#0A192F] border-b border-slate-800 flex items-center px-4 shrink-0 relative">
@@ -219,7 +219,7 @@ export default function WhyChooseUs() {
 
         {/* Mobile Mockup (Shown below grid on small screens) */}
         <div className="block lg:hidden w-full mt-10 relative z-20">
-          <div className="w-full aspect-[4/3] bg-[#0A192F] rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-slate-800 overflow-hidden flex flex-col ring-1 ring-white/10">
+          <div className="w-full aspect-4/3 bg-[#0A192F] rounded-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-slate-800 overflow-hidden flex flex-col ring-1 ring-white/10">
             <div className="w-full h-10 bg-[#0A192F] border-b border-slate-800 flex items-center px-4 shrink-0 relative">
               <div className="flex gap-2 shrink-0 z-10">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />

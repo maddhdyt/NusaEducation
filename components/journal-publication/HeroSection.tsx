@@ -102,7 +102,7 @@ export default function HeroSection() {
             <a href="#pricing" className="border border-[#0A192F] bg-transparent text-[#0A192F] px-8 py-3 font-semibold text-[16px] hover:bg-[#0A192F] hover:text-white transition-colors text-center min-w-[180px]">
               Lihat Paket Harga
             </a>
-            <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20pendampingan%20untuk%20mempublikasikan%20naskah%20jurnal%20saya.%20Bisa%20berikan%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" className="bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
+            <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20pendampingan%20untuk%20mempublikasikan%20naskah%20jurnal%20saya.%20Bisa%20berikan%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
               Konsultasi Gratis
             </a>
           </div>
@@ -181,7 +181,7 @@ export default function HeroSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[560px] bg-white border border-[#E71D36]/40">
               {/* User provided hero image */}
               <Image
-                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(2).png"
+                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(3).png"
                 alt="Hero Image Nusa Education"
                 width={560}
                 height={560}

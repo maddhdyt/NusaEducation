@@ -155,7 +155,7 @@ export default function PricingSection() {
               <a 
                 href={`https://wa.me/6285121117589?text=${encodeURIComponent(`Halo NusaEducation, saya tertarik dengan paket pendampingan jurnal: ${pkg.name}. Bisakah kita berdiskusi lebih lanjut?`)}`}
                 target="_blank" rel="noopener noreferrer"
-                className="self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]"
+                className="conversion [&>*]:pointer-events-none self-start bg-[#FF9F1C] text-white px-4 py-3 font-bold font-sans hover:bg-[#ff9500] transition-colors mb-4 text-[14px] lg:text-[15px]"
               >
                 Contact Sales
               </a>

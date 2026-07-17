@@ -119,7 +119,7 @@ export default function CTA({
             <p className="text-[#475569] text-sm md:text-[16px] leading-relaxed mb-8 font-sans font-medium max-w-[480px]">
               {description}
             </p>
-            <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
+            <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none bg-[#FF9F1C] text-white px-8 py-3.5 font-semibold text-[15px] md:text-[16px] hover:bg-[#ff9500] transition-colors inline-block tracking-wide">
               {buttonText}
             </a>
           </div>

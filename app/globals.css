@@ -5,14 +5,7 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (pointer: fine) {
-  body, a, button, h1, h2, h3, h4, h5, h6, p, div, span {
-    cursor: none;
-  }
-  input, textarea, [contenteditable] {
-    cursor: text;
-  }
-}
+
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }

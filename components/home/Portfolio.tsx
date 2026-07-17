@@ -107,7 +107,7 @@ export default function Portfolio() {
 
       {/* Header Container */}
       <div id="portfolio-header" className="max-w-[1380px] mx-auto px-6 md:px-10 mb-8 md:mb-16 flex flex-col items-center md:flex-row md:items-end justify-between gap-6 md:gap-8">
-        
+
         <div id="portfolio-title" className="flex flex-col items-center md:items-start w-full md:w-auto text-center md:text-left">
           <h2 className="font-serif leading-[0.85] tracking-tight flex flex-col items-center md:items-start relative z-20">
             <span className="inline-block tracking-tight text-[#133466] bg-[#cbdfff] px-3 md:px-4 py-1 md:py-2 text-[48px] sm:text-[56px] md:text-[64px] lg:text-[76px] relative z-0">
@@ -118,7 +118,7 @@ export default function Portfolio() {
             </span>
           </h2>
         </div>
-        
+
         {/* Navigation Arrows (Desktop Only) */}
         <div className="hidden md:flex gap-1 md:-mb-2">
           <button
@@ -147,18 +147,18 @@ export default function Portfolio() {
         >
           {/* Exact Pixel Spacer for Alignment */}
           <div
-            className="flex-shrink-0 invisible"
+            className="shrink-0 invisible"
             style={{ width: `${spacerWidth}px` }}
           />
 
           {projects.map((project) => (
-            <div key={project.id} className="w-[85vw] sm:w-[300px] md:w-[320px] lg:w-[340px] flex-shrink-0 snap-start group cursor-pointer flex flex-col mr-4">
+            <div key={project.id} className="w-[85vw] sm:w-[300px] md:w-[320px] lg:w-[340px] shrink-0 snap-start group cursor-pointer flex flex-col mr-4">
 
               {/* Flat Card Design */}
               <div className="w-full flex flex-col h-full bg-[#E0F2FE] transition-transform duration-300 group-hover:-translate-y-2">
 
                 {/* Top Block (Image) - No colorful overlay */}
-                <div className="w-full aspect-[16/10] relative overflow-hidden bg-slate-100">
+                <div className="w-full aspect-16/10 relative overflow-hidden bg-slate-100">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -170,11 +170,11 @@ export default function Portfolio() {
                 </div>
 
                 {/* Bottom Block (Content) */}
-                <div className="p-2 md:p-3 flex flex-col flex-grow relative">
+                <div className="p-2 md:p-3 flex flex-col grow relative">
                   <h3 className="text-xl md:text-[22px] font-serif font-normal text-[#0A192F] leading-[1.15] mb-3 tracking-tight" style={{ WebkitTextStroke: "0.6px currentColor" }}>
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 text-[13px] md:text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-slate-600 text-[13px] md:text-sm leading-relaxed mb-6 grow">
                     {project.desc}
                   </p>
 

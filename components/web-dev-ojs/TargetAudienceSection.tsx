@@ -155,7 +155,7 @@ export default function TargetAudienceSection() {
               {/* 4. Penerbit Akademik (BLUE) */}
               <div className="absolute top-[55%] md:top-[45%] left-[62%] md:left-[57%] z-30 pointer-events-auto">
                 <div className="w-[130px] md:w-[140px] lg:w-[160px] h-[160px] md:h-[180px] lg:h-[200px] bg-[#2EA2FF] relative shadow-lg">
-                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Penerbit Akademik" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(3).png" alt="Penerbit Akademik" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-100 text-[#0A192F] shadow-sm text-[11px] md:text-[11px] lg:text-[12px] font-bold px-2 py-0.5 whitespace-nowrap border border-blue-200">
                     Penerbit Akademik
                   </div>

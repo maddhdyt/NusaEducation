@@ -20,32 +20,38 @@ export default function CustomCursor() {
   const ringY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Deteksi jika perangkat benar-benar mobile/hanya sentuh (menghindari false positive di laptop berlayar sentuh)
-    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
-      return;
-    }
+    // Gunakan timeout kecil agar tidak ada hydration mismatch
     const initTimer = setTimeout(() => {
-      setIsTouchDevice(false);
-      setIsVisible(true);
-    }, 0);
+      // Cek apakah device benar-benar mobile tanpa mouse
+      if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+        setIsTouchDevice(true);
+      } else {
+        setIsTouchDevice(false);
+        setIsVisible(true);
+      }
+    }, 100);
 
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
 
-      const target = e.target as HTMLElement;
-      if (
-        target.closest("a, button, [role='button'], input, select, textarea, [data-cursor='hover']")
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
+      try {
+        const target = e.target as HTMLElement;
+        if (!target) return;
+        
+        if (target.closest && target.closest("a, button, [role='button'], input, select, textarea, [data-cursor='hover']")) {
+          setIsHovering(true);
+        } else {
+          setIsHovering(false);
+        }
 
-      if (window.getComputedStyle(target).cursor === 'text') {
-        setIsTextHover(true);
-      } else {
-        setIsTextHover(false);
+        if (window.getComputedStyle(target).cursor === 'text') {
+          setIsTextHover(true);
+        } else {
+          setIsTextHover(false);
+        }
+      } catch (err) {
+        // Abaikan error pada elemen SVG atau document saat dev mode
       }
     };
 
@@ -57,6 +63,7 @@ export default function CustomCursor() {
     document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
+      clearTimeout(initTimer);
       window.removeEventListener("mousemove", moveCursor);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
@@ -75,7 +82,7 @@ export default function CustomCursor() {
 
       {/* 1. THE AURA RING (Trailing & Expanding) */}
       <motion.div
-        className="fixed top-0 left-0 z-[9998] pointer-events-none rounded-full"
+        className="fixed top-0 left-0 z-[9999] pointer-events-none rounded-full"
         style={{
           x: ringX,
           y: ringY,

@@ -82,7 +82,7 @@ export default function FAQ() {
                     </h4>
 
                     {/* Caret Box */}
-                    <div className="w-[30px] h-[30px] flex-shrink-0 flex items-center justify-center border border-[#FF9F1C] text-[#FF9F1C]">
+                    <div className="w-[30px] h-[30px] shrink-0 flex items-center justify-center border border-[#FF9F1C] text-[#FF9F1C]">
                       <svg
                         width="12"
                         height="12"

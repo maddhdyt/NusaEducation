@@ -130,7 +130,7 @@ export default function TargetAudienceSection() {
               {/* 2. Mahasiswa Pascasarjana (GREEN) */}
               <div className="absolute top-[15%] md:top-[15%] left-[58%] md:left-[50%] z-30 pointer-events-auto">
                 <div className="w-[100px] md:w-[140px] lg:w-[160px] h-[120px] md:h-[160px] lg:h-[200px] bg-[#9BFF2E] relative shadow-lg">
-                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa.png" alt="Mahasiswa" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(3).png" alt="Mahasiswa" fill loading="lazy" sizes="(max-width: 768px) 100px, 160px" className="object-cover object-bottom" />
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-lime-100 text-[#0A192F] shadow-sm text-[8px] md:text-[9px] lg:text-[11px] font-bold px-1.5 py-0.5 whitespace-nowrap border border-lime-200">
                     Mahasiswa S2/S3
                   </div>
