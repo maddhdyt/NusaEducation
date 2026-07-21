@@ -358,7 +358,7 @@ export default function Hero() {
           <Link href="#layanan" className="conversion [&>*]:pointer-events-none text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center gap-2 px-5 py-3 sm:px-7 md:py-3 font-semibold text-[#0A192F] border border-[#0A192F] bg-transparent hover:bg-slate-50 transition-colors min-w-[140px]">
             Explore ↓
           </Link>
-          <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
+          <a href="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20Anda%20dan%20ingin%20menjadwalkan%20konsultasi%20awal%20secara%20gratis." target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none text-[14px] sm:text-[16px] md:text-[18px] flex items-center justify-center px-5 py-3 sm:px-7 md:py-3 font-semibold text-white bg-[#FF9F1C] border border-transparent hover:bg-[#E68A00] transition-all min-w-[140px]">
             Start Now
           </a>
         </div>

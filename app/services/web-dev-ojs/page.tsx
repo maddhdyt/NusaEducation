@@ -19,6 +19,7 @@ const ojsNavItems = [
   { label: 'Portofolio', href: '#portfolio' },
   { label: 'Harga', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Blog', href: 'https://blog.nusaeducation.com' },
 ];
 
 export const metadata = {
@@ -48,7 +49,7 @@ export default function WebDevOjsPage() {
           title="Siap Mengelola Jurnal OJS yang Profesional?"
           description="Tinggalkan kendala teknis dan fokus pada substansi jurnal Anda. Kami siap membantu instalasi, kustomisasi, hingga pemeliharaan."
           buttonText="Konsultasi Gratis"
-          buttonLink="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Web%20Dev%20dan%20OJS%20untuk%20institusi%20saya."
+          buttonLink="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20Web%20Dev%20dan%20OJS%20untuk%20institusi%20saya."
         />
       </main>
 

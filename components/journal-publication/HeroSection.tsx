@@ -102,7 +102,7 @@ export default function HeroSection() {
             <a href="#pricing" className="border border-[#0A192F] bg-transparent text-[#0A192F] px-8 py-3 font-semibold text-[16px] hover:bg-[#0A192F] hover:text-white transition-colors text-center min-w-[180px]">
               Lihat Paket Harga
             </a>
-            <a href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20pendampingan%20untuk%20mempublikasikan%20naskah%20jurnal%20saya.%20Bisa%20berikan%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
+            <a href="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20membutuhkan%20pendampingan%20untuk%20mempublikasikan%20naskah%20jurnal%20saya.%20Bisa%20berikan%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none bg-[#FF9F1C] text-white px-8 py-3 font-semibold text-[16px] hover:bg-[#ff9500] transition-colors text-center min-w-[180px]">
               Konsultasi Gratis
             </a>
           </div>

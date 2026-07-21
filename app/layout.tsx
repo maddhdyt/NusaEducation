@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Script from "next/script";
 import "./globals.css";
 
@@ -86,6 +87,7 @@ export default function RootLayout({
         </Script>
         <CustomCursor />
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

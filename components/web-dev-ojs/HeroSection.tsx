@@ -31,7 +31,7 @@ export default function HeroSection() {
             Lihat Portofolio
           </Link>
           <a 
-            href="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20berencana%20membuat%20%2F%20mengembangkan%20Website%20Kampus%20%26%20Sistem%20OJS.%20Bisa%20menjadwalkan%20sesi%20konsultasi%3F" target="_blank" rel="noopener noreferrer"
+            href="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20berencana%20membuat%20%2F%20mengembangkan%20Website%20Kampus%20%26%20Sistem%20OJS.%20Bisa%20menjadwalkan%20sesi%20konsultasi%3F" target="_blank" rel="noopener noreferrer"
             className="conversion [&>*]:pointer-events-none w-full sm:w-auto px-8 py-3.5 bg-[#FF9F1C] text-white font-semibold tracking-wide text-[15px] hover:bg-[#E68A00] border border-[#FF9F1C] transition-all hover:-translate-y-0.5 text-center"
           >
             Buat OJS

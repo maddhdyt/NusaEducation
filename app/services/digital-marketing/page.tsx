@@ -15,6 +15,7 @@ const digitalMarketingNavItems = [
   { label: 'Keunggulan', href: '#keunggulan' },
   { label: 'Model Kerjasama', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Blog', href: 'https://blog.nusaeducation.com' },
 ];
 
 export const metadata = {
@@ -40,7 +41,7 @@ export default function DigitalMarketingPage() {
           title="Siap Mendominasi Ekosistem Digital?" 
           description="Ubah pengunjung menjadi pelanggan setia. Dari optimasi mesin pencari organik hingga kampanye iklan berbayar yang agresif, kami siap merancang cetak biru untuk melipatgandakan skala bisnis Anda." 
           buttonText="Mulai Konsultasi Gratis"
-          buttonLink="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20layanan%20Digital%20Marketing%20bisnis%20saya."
+          buttonLink="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20tertarik%20untuk%20berkonsultasi%20mengenai%20layanan%20Digital%20Marketing%20bisnis%20saya."
         />
       </main>
       <Footer />

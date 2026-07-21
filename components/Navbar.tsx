@@ -16,10 +16,11 @@ interface NavbarProps {
 }
 
 const defaultNavItems: NavItem[] = [
-  { label: 'Keunggulan', href: '#keunggulan' },
-  { label: 'Portofolio', href: '#portofolio' },
-  { label: 'Testimoni', href: '#testimoni' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Keunggulan', href: '/#keunggulan' },
+  { label: 'Portofolio', href: '/#portofolio' },
+  { label: 'Testimoni', href: '/#testimoni' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Blog', href: 'https://blog.nusaeducation.com' },
 ];
 
 const hoverColors = ['bg-[#D1F4E0]', 'bg-[#D0E5FF]', 'bg-[#FDE2E4]', 'bg-[#EBFDCC]', 'bg-[#FFE8CC]'];
@@ -169,7 +170,7 @@ export default function Navbar({
           <Link href="/customer-care" className="cursor-pointer items-center text-[15px] font-medium text-[#0A192F] transition-colors hover:text-[#FF9F1C] flex">
             Customer Care
           </Link>
-          <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+          <a href={`https://wa.me/62881022376684?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" className="conversion [&>*]:pointer-events-none flex cursor-pointer items-center justify-center bg-[#FF9F1C] px-8 py-3 text-[17px] font-semibold text-white transition-all hover:bg-[#E68A00]">
             Contact Us
           </a>
         </div>
@@ -251,7 +252,7 @@ export default function Navbar({
 
           {/* Bottom Action Button */}
           <div className="mt-10">
-            <a href={`https://wa.me/6285121117589?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="conversion [&>*]:pointer-events-none flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
+            <a href={`https://wa.me/62881022376684?text=${encodeURIComponent(contactWaMessage)}`} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="conversion [&>*]:pointer-events-none flex w-full items-center justify-center bg-[#FF9F1C] px-8 py-4 text-[18px] font-semibold text-white transition-all hover:bg-[#E68A00]">
               Contact Us
             </a>
           </div>

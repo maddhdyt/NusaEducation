@@ -16,6 +16,7 @@ const journalNavItems = [
   { label: 'Indeksasi', href: '#indexing' },
   { label: 'Harga', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Blog', href: 'https://blog.nusaeducation.com' },
 ];
 
 export const metadata = {
@@ -42,7 +43,7 @@ export default function JournalPublicationPage() {
           title="Fokus Meneliti, Biarkan Kami Urus Publikasinya" 
           description="Tingkatkan visibilitas akademik Anda bersama tim profesional. Dari formatting, cek plagiasi, hingga jaminan terbit di jurnal nasional dan internasional bereputasi." 
           buttonText="Hubungi Tim Publikasi"
-          buttonLink="https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20pendampingan%20Publikasi%20Jurnal.%20Bisa%20berikan%20info%20lebih%20lanjut%3F"
+          buttonLink="https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20tertarik%20dengan%20layanan%20pendampingan%20Publikasi%20Jurnal.%20Bisa%20berikan%20info%20lebih%20lanjut%3F"
         />
       </main>
 

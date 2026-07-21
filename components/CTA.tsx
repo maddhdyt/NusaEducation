@@ -60,7 +60,7 @@ export default function CTA({
   title = "Solusi Cerdas untuk Skalabilitas Pendidikan",
   description = "Optimalkan manajemen dan visibilitas institusi Anda. Dengan dukungan sistem berbasis web yang andal dan strategi digital marketing yang terukur.",
   buttonText = "Mulai Konsultasi Gratis",
-  buttonLink = "https://wa.me/6285121117589?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20solusi%20untuk%20institusi%20saya.",
+  buttonLink = "https://wa.me/62881022376684?text=Halo%20NusaEducation%2C%20saya%20ingin%20berkonsultasi%20mengenai%20solusi%20untuk%20institusi%20saya.",
 }: CTAProps) {
   return (
     <section className="relative w-full bg-white pt-10 pb-20 overflow-hidden font-sans lg:min-h-[600px] xl:min-h-[750px]">
