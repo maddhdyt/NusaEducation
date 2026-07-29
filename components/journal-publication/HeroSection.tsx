@@ -181,7 +181,7 @@ export default function HeroSection() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[560px] bg-white border border-[#E71D36]/40">
               {/* User provided hero image */}
               <Image
-                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(3).png"
+                src="https://ik.imagekit.io/yqhp1cmbp/hero%20image%20(4).png"
                 alt="Hero Image Nusa Education"
                 width={560}
                 height={560}
@@ -222,7 +222,7 @@ export default function HeroSection() {
               {/* Avatar + Label */}
               <div className="absolute -bottom-7 left-[25%] -translate-x-1/2">
                 <div className="w-14 h-14 rounded-full overflow-hidden bg-[#1E9900] z-10 relative flex items-center justify-center shadow-sm">
-                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(2).png" width={56} height={56} className="w-full h-full object-cover" alt="Avatar Mahasiswa" priority />
+                  <Image src="https://ik.imagekit.io/yqhp1cmbp/mahasiswa%20(4).png" width={56} height={56} className="w-full h-full object-cover" alt="Avatar Mahasiswa" priority />
                 </div>
                 <div className="absolute -bottom-2 left-1/2 translate-x-2 bg-[#bcf8ad] px-1 text-[16px] font-sans font-bold text-[#0A192F] whitespace-nowrap z-20 shadow-sm">
                   Mahasiswa

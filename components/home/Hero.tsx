@@ -92,7 +92,7 @@ const slides = [
     gridLineColor: "#0A192F",
     gridTrailColor: "#FFFFFF",
     maskPath: "M0,600 H1440 V400 H1120 V240 H880 V80 H560 V200 H320 V360 H0 Z",
-    image: "https://ik.imagekit.io/yqhp1cmbp/person.webp",
+    image: "https://ik.imagekit.io/yqhp1cmbp/mahasiswa.webp",
     shapes: (
       <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-[900px] h-full z-0 pointer-events-none">
         {/* 4-Point Sparkle Star */}

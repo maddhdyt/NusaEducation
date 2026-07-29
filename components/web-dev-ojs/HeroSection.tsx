@@ -73,7 +73,7 @@ export default function HeroSection() {
             {/* GAMBAR ORANG */}
             <div className="absolute bottom-0 w-[105vw] sm:w-[500px] md:w-[540px] max-w-[540px] z-20 pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
               <Image 
-                src="https://ik.imagekit.io/yqhp1cmbp/person.webp" 
+                src="https://ik.imagekit.io/yqhp1cmbp/person%202%20(1).png" 
                 alt="Web Dev Expert" 
                 width={600}
                 height={600}
